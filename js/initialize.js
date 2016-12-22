@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function(){
-	
-	var lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation;
-	lockOrientation("landscape-primary");
 
 	var initButton = document.getElementById("init_button");
 	var canvas = document.getElementById("canvas");
