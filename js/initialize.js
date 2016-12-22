@@ -70,7 +70,9 @@ document.addEventListener('DOMContentLoaded', function(){
 		if(e.state.page === "main"){
 			showIntro();
 			hideShowOff();
-			
+		} else {
+			showOff();
+			hideIntro();
 		}
 	});
 
