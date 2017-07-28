@@ -48,8 +48,8 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
 
   <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -59,12 +59,18 @@ limitations under the License.
   <link rel="icon" type="image/png" href="/img/assets/favicon.png">
   <script src="/js/axios.min.js"></script>
   <script src="/js/jquery.js"></script>
+  <script src="/js/vue.min.js"></script>
 </head>
 
 <body>
-  <div class="wrapper">
+  <div class="wrapper" id="app">
     <header id="header"></header>
-    <section id="content"></section>
+    <div id="content-wrapper">
+      <transition-group name="slide-fade" mode="out-in">
+        <section v-show="visible_resume" id="resume" key="resume"></section>
+        <section v-show="!visible_resume" id="content" key="summary"></section>
+      </transition>
+    </div>
     <footer id="footer"></footer>
   </div>
 
