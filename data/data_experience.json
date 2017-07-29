@@ -1,0 +1,57 @@
+[
+    {
+        "title": "Senior UI/UX developer, Kloudmart",
+        "url": [{
+            "caption": "kloudmart.lk",
+            "link": "https://kloudmart.lk"
+        }],
+        "time": "2015-PRESENT",
+        "description": "KloudMart is a visual platform for non-programmers, to create your own IdeaPRO apps on the Dialog (Sri Lanka) ideaMart platform, without writing a single piece of code, using a visual interface. I worked as the UI/UX developer for kloudmart.lk and also developed the App Simulator to test the apps created using KloudMart.",
+        "skills": [
+            "NodeJS",
+            "Express",
+            "Socket.io",
+            "HTML 5",
+            "CSS",
+            "JS",
+            "CodeIgniter"
+        ]
+    },
+    {
+        "title": "Designer, Topcoder Studio",
+        "url": [{
+            "caption": "topcoder.com",
+            "link": "http://tccommunity.wpengine.com/tco13/studio/studio-advancers-leaderboard/studio-advancers-bracket/"
+        }],
+        "time": "2009-PRESENT",
+        "description": "Selected for World Finals of TopCoder Open 2013 (TCO13) held at Washington D.C and placed 10th.",
+        "skills": [
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "UI/UX Design"
+        ]
+    },
+    {
+        "title": "Freelancer",
+        "url": [{
+            "caption": "upWork.com, ",
+            "link": "https://www.upwork.com/o/profiles/users/_~019fb184fbddd12815/"
+        },
+        {
+            "caption": " fiverr.com",
+            "link": "https://www.fiverr.com/imadhusanka"
+        }],
+        "time": "2012-PRESENT",
+        "description": "Earned great experience working with various clients from different countries, on various platforms.",
+        "skills": [
+            "HTML",
+            "CSS",
+            "JS",
+            "Adobe Flash",
+            "Adobe Animate",
+            "Adobe Photoshop",
+            "Adobe Illustrator",
+            "CorelDraw"
+        ]
+    }
+]

@@ -1,0 +1,65 @@
+[
+	{
+		"date": "JUL 2016",
+		"title": "ACES Coders v6.0",
+		"placement": "11th Place",
+		"description": "Competitive coding contest ",
+		"skills": ["Javascript", "Python", "Java", "C++"]
+	},
+	{
+		"date": "MAY 2016",
+		"title": "Angelhack 2016",
+		"placement": "Code4Impact Award",
+		"description": "Further developed the Android application for S-Sense (Sleep Avoidance Wearable Device)",
+		"skills": ["Android", "UI/UX", "REST API"]
+	},
+	{
+		"date": "APR 2016",
+		"title": "ACES Hackathon 2016",
+		"placement": "1st Place",
+		"description": "Developed the Android application for S-Sense (Sleep Avoidance Wearable Device) ",
+		"skills": ["Android", "UI/UX"]
+	},
+	{
+		"date": "NOV 2015",
+		"title": "Yarl Geek Challenge Season 4",
+		"placement": "Final 6",
+		"description": "Further developed SiRA (Simple Reply Automation System)",
+		"skills": ["Android", "UI/UX"]
+	},
+	{
+		"date": "NOV 2015",
+		"title": "SLIIT CodeFest 2015",
+		"placement": "Participation",
+		"description": "Created Virtual Teacher, an interactive tutorial simulator application",
+		"skills": ["Adobe Flash"]
+	},
+	{
+		"date": "OCT 2015",
+		"title": "IEEE Xtreme 2015",
+		"placement": "Top 50",
+		"description": "Created Virtual Teacher, an interactive tutorial simulator application",
+		"skills": ["Python", "Java", "C++"]
+	},
+	{
+		"date": "JUL 2015",
+		"title": "ACES Hackathon 2015",
+		"placement": "1st Place",
+		"description": "Developed SiRA (Simple Reply Automation System), an application sending automated intelligent reply for incoming SMS ",
+		"skills": ["Android", "UI/UX"]
+	},
+	{
+		"date": "JUN 2015",
+		"title": "ACES Coders v5.0",
+		"placement": "Top 20",
+		"description": "Competitive coding contest ",
+		"skills": ["Python", "Java", "C++"]
+	},
+	{
+		"date": "OCT 2014",
+		"title": "IESL YMS Hackathon 2014",
+		"placement": "8th Place",
+		"description": "Created a project timeline visualizer (a web application) (Individual Project) ",
+		"skills": ["Web", "jQuery", "CSS", "PHP"]
+	}
+]

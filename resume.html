@@ -1,18 +1,202 @@
-<h2>Resume <small>Last modified on Jul 28, 2017</small> <a class="right button" @click="hideResume"><i class="material-icons">arrow_back</i></a></h2>
+<h2>Resume <small>Last modified on Jul 28, 2017</small>
+<a class="right button relative-pos" title="Download my resume as a PDF" href="/pdf/resume_ishan_madhusanka.pdf" @click.stop="setDownloaded" download target="_blank" style="margin-left: 1em;">
+	<transition-group name="slide-fade" mode="out-in">
+		<i class="material-icons fixed-icon" v-if="!resume_downloaded" key="downloaded">picture_as_pdf</i>
+		<i class="material-icons fixed-icon" v-else key="not_downloaded">check</i>
+	</transition-group>
+	<span class="hidden"><i class="material-icons">picture_as_pdf</i></span>
+	Download Resume
+</a>
+<a class="right button" @click="hideResume"><span><i class="material-icons">arrow_back</i></span> Recent Projects</a>
+</h2>
 
-<div class="box">
+<div id="whoami" class="content-box">
 	<code class="code-heading">~$ whoami</code>
 	<hgroup>
 		<h1>Ishan Madhusanka</h1>
-		<h3 class="uppercase">Full stack developer + UI/UX Enthusiast</h3>
+		<h3 class="uppercase">Full stack developer <br>UI/UX Enthusiast</h3>
 	</hgroup>
-	<p>I’m a passionate, self-motivated, fast-paced Computer Engineering undergraduate with a creative insight who loves to work with web technologies + UI/UX related projects. Known for developing event-specific (targeted) web applications for university events.</p>
+	<p>I’m a passionate, self-motivated, fast-paced Computer Engineering undergraduate with a creative insight who loves to work with web technologies + UI/UX related projects. Known for developing event-specific (targeted) web applications for <a href="http://www.ce.pdn.ac.lk/" target="_blank">university</a> events.</p>
 </div>
-<div class="whois imadhusanka.me">
-	<code class="code-heading">~$ whoami</code>
-	<hgroup>
-		<h1>Ishan Madhusanka</h1>
-		<h3 class="uppercase">Full stack developer + UI/UX Enthusiast</h3>
-	</hgroup>
-	<p>I’m a passionate, self-motivated, fast-paced Computer Engineering undergraduate with a creative insight who loves to work with web technologies + UI/UX related projects. Known for developing event-specific (targeted) web applications for university events.</p>
+<div class="content-box" id="skills_list">
+	<code class="code-heading">~$ cat skills</code>
+	<h2>Skills</h2>
+	<hr>
+	<h3>Tested skills</h3>
+	<p>For more results on tests, visit my <a href="https://www.upwork.com/o/profiles/users/_~019fb184fbddd12815/">upwork.com profile</a></p>
+	<div class="skill-list-tested">
+		<skill-component 
+			v-for="skill in skills_tested_list"
+			:skill="skill.name"
+			:image="skill.image"
+			:imagewidth="skill.imagewidth"
+			:imageheight="skill.imageheight"
+			:score="skill.score"
+			:ranking="skill.ranking"
+			:date="skill.date">	
+		</skill-component>
+		
+	</div>
+	<h3>Preferred skills</h3>
+	<p>From the listing below, the highlighted ones are the most preferred.</p>
+	<table>
+		<tr v-for="(skills, category) in skills_list">
+			<td class="skill_title">{{category}}</td>
+			<td class="skill_list">
+				<span class="skill" v-for="skill in skills">{{skill}}</span>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="content-box" id="experience">
+	<code class="code-heading">~$ history</code>
+	<h2>Experience</h2>
+	<hr>
+	<div class="experience_item" v-for="item in experience">
+		<h3 class="bold">{{item.title}} | <a :href="url_item.link" v-for="url_item in item.url">{{url_item.caption}}</a> ( {{item.time}} )</h3>
+		<div class="skills">
+			<span class="skill" v-for="skill in item.skills">{{skill}}</span>
+		</div>
+		<p>{{item.description}}</p>
+	</div>
+
+</div>
+
+<div class="content-box">
+	<h2>Hackathons &amp; Competitive Coding Competitions</h2>
+	<hr>
+	<table class="timeline">
+		<tr>
+			<th colspan="2"></th>
+			<th class="text-left">Competition</th>
+			<th class="text-left">Placement/Award</th>
+			<th class="text-right">Summary of Technical Stack</th>
+		</tr>
+		<template v-for="(item, index) in competitions">
+			<tr class="line-horizontal">
+				<td class="date"><span>{{item.date}}</span></td>
+				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(competitions.length-1))}"><span class="dot"> </span></td>
+				<td class="title"><span>{{item.title}}</span></td>
+				<td colspan="2" class="award-skills">
+					<span class="desc-secondary">
+						<img src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
+						{{item.placement}}
+					</span>
+					
+					<div class="right"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2"></td>
+				<td colspan="3" class="description"><span>{{item.description}}</span></td>
+			</tr>
+		</template>
+	</table>
+</div>
+
+<div class="content-box">
+	<h2>Projects</h2>
+	<hr>
+	<table class="timeline">
+		<tr>
+			<th colspan="2"></th>
+			<th class="text-left">Project</th>
+			<th class="text-left">URL</th>
+			<th class="text-right">Summary of Technical Stack</th>
+		</tr>
+		<template v-for="(item, index) in projects">
+			<tr class="line-horizontal">
+				<td class="date"><span>{{item.date}}</span></td>
+				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(projects.length-1))}"><span class="dot"> </span></td>
+				<td class="title"><span>{{item.title}}</span></td>
+				<td colspan="2" class="url-skills">
+					<span class="desc-secondary">
+						<img src="/img/icons/url.svg" alt="">
+						{{item.url}}
+					</span>
+					<div class="right"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="3" class="description"><span>{{item.description}}</span></td>
+			</tr>
+		</template>
+	</table>
+</div>
+
+<div class="terminal box">
+	<div class="content-box small-talk" id="whois">
+		<code class="code-heading">~$ whois imadhusanka.me</code>
+		<ul>
+			<li><span><img src="/img/icons/mail.png"></span> ahtimadhusanka@gmail.com</li>
+			<li><span><img src="/img/icons/phone.png"></span> (+94)71 645 1456</li>
+			<li><span><img src="/img/icons/location.png"></span> Nuwara Eliya, Sri Lanka</li>
+			<li><span><img src="/img/icons/github.png"></span> github.com/imadx</li>
+			<li><span><img src="/img/icons/fb.png"></span> fb.me/ishan.madhusanka</li>
+		</ul>
+	</div>
+
+	<div class="content-box small-talk" id="education">
+		<code class="code-heading">~$ tail education -n 12</code>
+		<ul>
+			<li>
+				<b>Ordinary Level</b><br>
+				<span class="faded">Dharmaraja College, Kandy</span><br>
+				<span class="faded">[ 2008 ]</span>
+			</li>
+			<li>
+				<b>Advanced Level</b><br>
+				<span class="faded">Dharmaraja College, Kandy</span><br>
+				<span class="faded">[ 2011 ]</span>
+			</li>
+			<li>
+				<b>B.Sc. Engineering <br>
+				(Specializing in Computer Engineering)</b><br>
+				<span class="faded">University of Peradeniya</span><br>
+				<span class="faded">[ 2014 – Present ]</span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-box small-talk" id="sports">
+		<code class="code-heading">~$ tail sports -n 6</code>
+		<ul>
+
+			<li>
+				<b>Half Colors</b><br>
+				<span class="faded">University Hockey Team - 2014</span><br>
+			</li>
+			<li>
+				<b>Full Colors</b><br>
+				<span class="faded">University Hockey Team - 2015</span><br>
+				<span class="faded">University Hockey Team - 2016</span><br>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="terminal box">
+	<div class="content-box">
+		<code class="code-heading">~$ tail clubs_and_societies -n 12</code>
+		<ul>
+
+			<li>
+				<b>President</b><br>
+				<span class="faded">Society of ICT Dharmaraja College, Kandy - 2010,2011</span><br>
+			</li>
+			<li>
+				<b>Editor</b><br>
+				<span class="faded">Science Society, Dharmaraja College, Kandy - 2011</span><br>
+				<span class="faded">Astronomical Society, Dharmaraja College, Kandy - 2011</span><br>
+				<span class="faded">English Literary &amp; Drama Society, Dharmaraja College, Kandy - 2011</span><br>
+				<span class="faded">Pera Hockey Association, University of Peradeniya - 2017</span><br>
+			</li>
+			<li>
+				<b>Executive Committee</b><br>
+				<span class="faded">Hackers’ Club, University of Peradeniya - 2016</span><br>
+				<span class="faded">Association of Computer Engineering Students, University of Peradeniya - 2017</span><br>
+			</li>
+		</ul>
+	</div>
+	
 </div>

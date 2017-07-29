@@ -1,0 +1,67 @@
+{
+    "Application development": [
+        "HTML5 + Javascript",
+        "Java",
+        "C",
+        "C#",
+        "C++",
+        ".NET"
+    ],
+    "JS frameworks": [
+        "Express.js",
+        "Socket.io",
+        "Vue.js",
+        "Angular.js"
+    ],
+    "JS libraries": [
+        "D3.js",
+        "lodash.js",
+        "Chartist.js",
+        "Three.js",
+        "jQuery"
+    ],
+    "CSS frameworks": [
+        "Bootstrap",
+        "MDL",
+        "SemanticUI"
+    ],
+    "Database systems": [
+        "MongoDB",
+        "Mysql",
+        "PostgreSQL",
+        "SQLite"
+    ],
+    "Backend frameworks": [
+        "NodeJS",
+        "CodeIgniter",
+        "Flask",
+        "Django",
+        "Tornado"
+    ],
+    "Dev ops": [
+        "Heroku",
+        "Docker",
+        "Vagrant"
+    ],
+    "Distributed version control": [
+        "git",
+        "GitHub",
+        "BitBucket",
+        "SourceTree"
+    ],
+    "Designing tools": [
+        "AnimateCC",
+        "Photoshop",
+        "Illustrator",
+        "AE"
+    ],
+    "Theoretical knowledge": [
+        "Operating Systems",
+        "Software Architecture",
+        "Data Structures & Algorithms",
+        "Machine Learning & Data mining",
+        "Artificial Intelligence",
+        "Graph theory",
+        "Embedded Systems"
+    ]
+}

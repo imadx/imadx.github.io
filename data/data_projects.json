@@ -1,0 +1,58 @@
+[
+	{
+		"date": "JUL 2017",
+		"title": "Industrial Training Portal",
+		"url": "itportal.ce.pdn.ac.lk",
+		"description": "[FINAL YEAR PROJECT] An intelligent automated training portal for university internship assignment . ",
+		"skills": ["NodeJS", "Express", "Socket.io", "Vue.js", "MongoDB"]
+	},
+	{
+		"date": "JUN 2017",
+		"title": "Pera Hockey Match Scheduler ",
+		"url": "perahockey.herokuapp.com",
+		"description": "A web application to generate match schedules avoiding conflicts in multiple courts, allowing intermediate idle times.",
+		"skills": ["NodeJS", "Express", "Vue.js"]
+	},
+	{
+		"date": "MAY 2017",
+		"title": "ACES Hackathon 2017 Scores",
+		"url": "hackathon-17.herokuapp.com",
+		"description": "A collaborative realtime web app, for judges to allocate scores at final presentations. Hosted locally during the event.",
+		"skills": ["NodeJS", "Express", "Socket.io", "Vue.js"]
+	},
+	{
+		"date": "APR 2017",
+		"title": "Published  Vue.js plugins",
+		"url": "npmjs.com/package/vue-photo-upload",
+		"description": "Published 2 Vue.js plugins to npm, namely vue-photo-upload & vue-live-edit. ",
+		"skills": ["ES6", "npm", "Vue.js"]
+	},
+	{
+		"date": "DEC 2016",
+		"title": "MyStay.lk",
+		"url": "mystay.lk",
+		"description": "[STARTUP PROJECT] A website to search and locate places for a long-term or short-term stay.",
+		"skills": ["OpenStreet Maps", "NodeJS", "Express", "Socket.io", "Vue.js"]
+	},
+	{
+		"date": "NOV 2016",
+		"title": "Realtime Multiplayer Game",
+		"url": "imadx-game.herokuapp.com",
+		"description": "A realtime 2D-shooter-game. Handles over 80,000 concurrent requests at 100 requests per second over WebSockets. ",
+		"skills": ["Go", "Iris", "WebSockets", "CreateJS"]
+	},
+	{
+		"date": "JUL 2016",
+		"title": "Industrial Training Portal 2016",
+		"url": "[replaced with new version]",
+		"description": "A web platform for university training assignment process, which was actively used in 2016.",
+		"skills": ["HTML5", "CSS3", "jQuery", "CodeIgniter"]
+	},
+	{
+		"date": "AUG 2016",
+		"title": "IoT Hub ",
+		"url": "github.com/imadx/IoT_hub",
+		"description": "[ACADEMIC PROJECT] An IOT Hub, to enable authorization, authentication, communication and data analysis for any custom IOT device given the configurations.",
+		"skills": ["Express", "MQTT", "Socket.io", "MongoDB"]
+	}
+]

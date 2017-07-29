@@ -1,0 +1,47 @@
+[
+    {
+        "name": "JavaScript",
+        "image": "js.png",
+        "imagewidth": 72,
+        "imageheight": 101,
+        "score": "3.95",
+        "ranking": "Top 30%",
+        "date": "DEC, 2016" 
+    },
+    {
+        "name": "CSS",
+        "image": "css.png",
+        "imagewidth": 72,
+        "imageheight": 102,
+        "score": "4.05",
+        "ranking": "Top 20%",
+        "date": "DEC, 2016" 
+    },
+    {
+        "name": "HTML5",
+        "image": "html.png",
+        "imagewidth": 72,
+        "imageheight": 101,
+        "score": "4.70",
+        "ranking": "Top 10%",
+        "date": "DEC, 2016" 
+    },
+    {
+        "name": "NodeJS",
+        "image": "node.png",
+        "imagewidth": 82,
+        "imageheight": 93,
+        "score": "3.65",
+        "ranking": "Top 30%",
+        "date": "DEC, 2016" 
+    },
+    {
+        "name": "AJAX",
+        "image": "ajax.png",
+        "imagewidth": 123,
+        "imageheight": 53,
+        "score": "4.40",
+        "ranking": "Top 20%",
+        "date": "DEC, 2016" 
+    }
+]

@@ -48,8 +48,8 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-<!--   <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+  <link href="//fonts.googleapis.com/css?family=Open+Sans:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -67,8 +67,8 @@ limitations under the License.
     <header id="header"></header>
     <div id="content-wrapper">
       <transition-group name="slide-fade" mode="out-in">
-        <section v-show="visible_resume" id="resume" key="resume"></section>
-        <section v-show="!visible_resume" id="content" key="summary"></section>
+        <section v-if="visible_resume" id="resume" key="resume"></section>
+        <section v-else id="content" key="summary"></section>
       </transition>
     </div>
     <footer id="footer"></footer>
