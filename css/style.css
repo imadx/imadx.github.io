@@ -23,7 +23,8 @@
 }
 
 html, body{
-	font-family: 'Open Sans', 'Roboto', sans-serif;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
 	margin: 0;
 	padding: 0;
 }
@@ -47,6 +48,10 @@ header{
 }
 header h1{
 	font-weight: lighter;
+}
+
+p{
+	text-align: justify;
 }
 header .contacts{
 	background: rgba(0,0,0,0.3);
@@ -105,6 +110,9 @@ section#resume{
 	margin: 4vw auto;
 	margin-top: 8vh;
 	margin-bottom: 8vh;
+}
+section#resume h2 > span{
+	line-height: 50px;
 }
 a{
 	color: #00a859;
@@ -404,6 +412,7 @@ small{
 	vertical-align: top;
 	padding-right: 1rem;
 	opacity: 0.8;
+	font-weight: normal;
 	padding-top: 0.9em;
 }
 #skills_list td.skill_list{
@@ -436,7 +445,7 @@ span.skill{
 
     background:#00a859;
     color: #fff;
-    cursor: pointer;
+    /*cursor: pointer;*/
     border-radius: 2px;
     align-items: center;
 }
@@ -511,6 +520,7 @@ span.skill{
 	top: -0.2em;
 	opacity: 0.8;
 }
+.timeline tr td span.desc-secondary,
 .timeline tr td a.desc-secondary{
 	padding-right: 1em;
 	padding-left: 1em;
@@ -620,7 +630,7 @@ span.skill{
 #notification_area hgroup{
 	display: inline-block;
 	color: #fff;
-	margin-top: 1.2em;
+	margin-top: 1.5em;
 	vertical-align: baseline;
 	float: left;
 	transform: scale(0.9,0.9);
@@ -636,7 +646,8 @@ span.skill{
 	display: block;
 	color: #fff;
 	margin: 1em;
-	margin-top: 1.5em;
+	margin-top: 1.7em;
+	letter-spacing: 0.4pt;
 }
 #notification_area .contacts a{
 	display: flex;

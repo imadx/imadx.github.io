@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     </svg>\
                     <img :src="getImageSource(image)" :width="image_width" :height="image_height" :alt="skill">\
                     <span class="score">{{score}}<small>/5.00</small></span>\
-                    <span class="ranking" :class="formatRanking(ranking)">{{ranking}}</span>\
+                    <span class="ranking" :class="formatRanking(ranking)" :title="ranking + \' as of upWork.com\' ">{{ranking}}</span>\
                     <span class="date">{{date}}</span>\
                 </div>\
             ',
