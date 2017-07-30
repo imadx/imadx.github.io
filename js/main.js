@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
             data: {
                 visible_resume: true,
                 resume_downloaded: false,
+                projects_hidden: true,
 
                 window_width: window.innerWidth,
 
@@ -213,6 +214,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 hideResume: function(){
                     console.log('[imadx.github.io] switching to homepage...')
                     this.visible_resume = false;
+                },
+                showHiddenProjects: function(){
+                    this.projects_hidden = false;
+                },
+                hideHiddenProjects: function(_hidden){
+                    if(_hidden){
+                        this.projects_hidden = true;
+                    }
                 },
                 setDownloaded: function(){
                     console.log('[imadx.github.io] cv downloaded..')
@@ -246,6 +255,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 isTooCompactTimeline: function(){
                     return this.window_width<768;
+                }
+            },
+            computed: {
+                filtered_projects: function(){
+                    let _projects = this.projects;
+
+                    if(!this.projects_hidden){
+                        return _projects;
+                    }
+
+                    return _projects.filter(_proj => !_proj.hidden);
                 }
             },
             watch: {

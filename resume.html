@@ -29,6 +29,7 @@
 	<div class="skill-list-tested">
 		<skill-component 
 			v-for="skill in skills_tested_list"
+			:key="skill.name"
 			:skill="skill.name"
 			:image="skill.image"
 			:imagewidth="skill.imagewidth"
@@ -107,50 +108,59 @@
 <div class="content-box">
 	<h2>Projects</h2>
 	<hr>
-	<table class="timeline">
-		<tr>
-			<th colspan="2"></th>
-			<th class="text-left">Project</th>
-			<th v-show="!isTooCompactTimeline()" class="text-left left-padded">URL</th>
-			<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
-		</tr>
-		<template v-for="(item, index) in projects">
-			<tr class="line-horizontal">
-				<td class="date"><span>{{item.date}}</span></td>
-				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(projects.length-1))}"><span class="dot"> </span></td>
-				<td class="title"><span>{{item.title}}</span></td>
-				<td colspan="2" class="url-skills">
-					<a :href="'//' + item.url" class="desc-secondary" v-show="!isTooCompactTimeline()" target="_blank">
-						<img class="url-skills" src="/img/icons/url.svg" alt="">
-						{{item.url}}
-					</a>
-					<div class="right" v-show="!isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
-				</td>
-			</tr>
-			<tr>
-				<td></td>
-				<td colspan="3" class="description">
-					<div class="small" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
-					<span>{{item.description}}</span>
-					<a :href="'//' + item.url" class="desc-secondary" v-show="isTooCompactTimeline()" target="_blank">
-						<img class="url-skills" src="/img/icons/url.svg" alt="">
-						{{item.url}}
-					</a>
-				</td>
-			</tr>
-		</template>
-	</table>
+		<table class="timeline">
+			<thead>
+				<tr key="project_headers">
+					<th colspan="2"></th>
+					<th class="text-left">Project</th>
+					<th v-show="!isTooCompactTimeline()" class="text-left left-padded">URL</th>
+					<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
+				</tr>
+			</thead>
+			<tbody is="transition-group" name="slide-fade-scale">
+				<template v-for="(item, index) in filtered_projects" >
+					<tr class="line-horizontal" :key="'row_1_' + item.id">
+						<td class="date"><span>{{item.date}}</span></td>
+						<td rowspan="2" class="dot-td" :class="{'dot-td-outline': (index==(filtered_projects.length-2) && projects_hidden),'end-dot': (index==(filtered_projects.length-1))}"><span class="dot" :class="{'dot-hidden': item.hidden}" @click="hideHiddenProjects(item.hidden)">{{item.hidden?'-':''}}</span></td>
+						<td class="title"><span>{{item.title}}</span></td>
+						<td colspan="2" class="url-skills">
+							<a :href="'//' + item.url" class="desc-secondary" v-show="!isTooCompactTimeline()" target="_blank">
+								<img class="url-skills" src="/img/icons/url.svg" alt="">
+								{{item.url}}
+							</a>
+							<div class="right" v-show="!isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+						</td>
+					</tr>
+					<tr :key="'row_2_' + item.id">
+						<td></td>
+						<td colspan="3" class="description">
+							<div class="small" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+							<span>{{item.description}}</span>
+							<a :href="'//' + item.url" class="desc-secondary" v-show="isTooCompactTimeline()" target="_blank">
+								<img class="url-skills" src="/img/icons/url.svg" alt="">
+								{{item.url}}
+							</a>
+						</td>
+					</tr>
+					<tr :key="'row_3_' + item.id" class="expanding-button" v-if="projects_hidden && index==(filtered_projects.length-2)" @click="showHiddenProjects">
+						<td class="date"></td>
+						<td class="dot-td dot-td-outline"><span class="dot dot-outline">+{{projects.length - filtered_projects.length}}</span></td>
+						<td colspan="3" class="hint"><span class="hint-tip">Tap to show all projects</span></td>
+					</tr>
+				</template>
+			</tbody>
+		</table>
 </div>
 
 <div class="terminal box">
 	<div class="content-box small-talk" id="whois">
 		<code class="code-heading">~$ whois imadhusanka.me</code>
 		<ul>
-			<li><span><img src="/img/icons/mail.png"></span> ahtimadhusanka@gmail.com</li>
-			<li><span><img src="/img/icons/phone.png"></span> (+94)71 645 1456</li>
-			<li><span><img src="/img/icons/location.png"></span> Nuwara Eliya, Sri Lanka</li>
-			<li><span><img src="/img/icons/github.png"></span> github.com/imadx</li>
-			<li><span><img src="/img/icons/fb.png"></span> fb.me/ishan.madhusanka</li>
+			<li><a target="_blank" href="mailto:ahtimadhusanka@gmail.com"><span><img src="/img/icons/mail.png"></span>ahtimadhusanka@gmail.com</a></li>
+			<li><a target="_blank" href="tel:+94716451456"><span><img src="/img/icons/phone.png"></span>(+94)71 645 1456</a></li>
+			<li><span><img src="/img/icons/location.png"></span>Nuwara Eliya, Sri Lanka</li>
+			<li><a target="_blank" href="https://github.com/imadx"><span><img src="/img/icons/github.png"></span>github.com/imadx</a></li>
+			<li><a target="_blank" href="https://fb.me/ishan.madhusanka"><span><img src="/img/icons/fb.png"></span>fb.me/ishan.madhusanka</a></li>
 		</ul>
 	</div>
 

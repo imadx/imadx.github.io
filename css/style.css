@@ -258,6 +258,19 @@ small{
   transform: translateY(20px);
   opacity: 0;
 }
+
+
+.slide-fade-scale-enter-active {
+  transition: all .2s ease .2s;
+}
+.slide-fade-scale-leave-active {
+  transition: all .2s ease;
+}
+.slide-fade-scale-enter, .slide-fade-scale-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(0px) scale(1,0);
+  /*opacity: 0;*/
+}
 #content-wrapper{
 	padding: 0 1rem;
 	font-size: 11pt;
@@ -391,6 +404,13 @@ small{
 	display: flex;
 	align-items: center;
 }
+#whois ul li a{
+	color: #fff;
+}
+#whois ul li a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
 #whois ul li span{
 	width: 16px;
 	text-align: right;
@@ -461,6 +481,75 @@ span.skill{
 	border-radius: 30px;
 	margin: 0 1rem;
 }
+.timeline tr.expanding-button:hover{
+	cursor: pointer;
+}
+.timeline span.dot.dot-hidden{
+	box-sizing: border-box;
+	border: solid 2px #00a859;
+	background: #fff;
+	cursor: pointer;
+
+    text-align: center;
+    line-height: 2.1em;
+    font-size: 0.85em;
+    font-weight: bold;
+}
+.timeline span.dot.dot-outline{
+	box-sizing: border-box;
+    border: dotted 2px #00a859;
+    margin-top: 1.8em;
+    margin-bottom: 4em;
+    background: #fff;
+    text-align: center;
+    line-height: 2.2em;
+    font-size: 0.85em;
+    font-weight: bold;
+    opacity: 1;
+    transform: scale(1,1);
+    transition: all .1s;
+    color: #555;
+}
+.timeline tr.expanding-button:hover span.dot.dot-outline{
+	color: #333;
+}
+.timeline tr td.hint{
+	vertical-align: top;
+	padding-top: 1.5em;
+}
+.timeline tr.expanding-button td.hint span.hint-tip{
+	background: rgba(0,0,0,0.1);
+	padding: 0.6em 1em;
+	opacity: 0.8;
+	display: inline-block;
+	border-radius: 2px;
+	transition: all .3s;
+	text-transform: uppercase;
+	transform: translateX(20px);
+    font-size: 10pt;
+}
+.timeline tr.expanding-button td.hint{
+	position: relative !important;
+}
+.timeline tr.expanding-button td.hint span.hint-tip{
+}
+.timeline tr.expanding-button:hover td.hint span.hint-tip{
+	opacity: 1;
+	transform: translateX(10px);
+}
+.timeline tr.expanding-button td.hint span.hint-tip::before{
+    content: "";
+    display: block;
+    width: 0; 
+    height: 0; 
+    border-top: 10pt solid transparent;
+    border-bottom: 10pt solid transparent;
+    border-right: 10pt solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 2pt;
+    left: -10pt;
+}
+
 .timeline tr th.left-padded{
 	padding-left: 1em;
 }
@@ -544,7 +633,12 @@ span.skill{
 .timeline tr td.dot-td{
 	padding-top: 0;
 	padding-bottom: 0;
-	background: url('/img/icons/line-v.svg') repeat-y 30px #fff;
+	background: url('/img/icons/line-v.svg') repeat-y 30px 0px #fff;
+	background-size: 4px 4px; 
+}
+.timeline tr td.dot-td.dot-td-outline{
+	height: 60px;
+	background: url('/img/icons/line-v-dashed.svg') repeat-y 31px #fff;
 	background-size: 4px 4px; 
 }
 .timeline tr td.dot-td.end-dot{

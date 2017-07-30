@@ -1,5 +1,15 @@
 [
 	{
+		"id": "project_0",
+		"date": "JUL 2017",
+		"title": "My Portfolio",
+		"url": "imadx.github.io",
+		"description": "Created this github page to showcase my resume",
+		"skills": ["HTML5", "Vue.js", "Axios", "CorelDRAW"],
+		"hidden": true
+	},
+	{
+		"id": "project_1",
 		"date": "JUL 2017",
 		"title": "Industrial Training Portal",
 		"url": "itportal.ce.pdn.ac.lk",
@@ -7,6 +17,7 @@
 		"skills": ["NodeJS", "Express", "Socket.io", "Vue.js", "MongoDB"]
 	},
 	{
+		"id": "project_2",
 		"date": "JUN 2017",
 		"title": "Pera Hockey Match Scheduler ",
 		"url": "perahockey.herokuapp.com",
@@ -14,6 +25,7 @@
 		"skills": ["NodeJS", "Express", "Vue.js"]
 	},
 	{
+		"id": "project_3",
 		"date": "MAY 2017",
 		"title": "ACES Hackathon 2017 Scores",
 		"url": "hackathon-17.herokuapp.com",
@@ -21,13 +33,50 @@
 		"skills": ["NodeJS", "Express", "Socket.io", "Vue.js"]
 	},
 	{
+		"id": "project_4",
+		"date": "MAY 2017",
+		"title": "Realtime NodeJS Starter",
+		"url": "git.io/v7lcK",
+		"description": "A starter template for realtime express app, with Socket.io and MongoDB",
+		"skills": ["NodeJS", "Express", "Socket.io", "MongoDB", "Vue.js", "Axios"],
+		"hidden": true
+	},
+	{
+		"id": "project_5",
 		"date": "APR 2017",
-		"title": "Published  Vue.js plugins",
+		"title": "Published vue-photo-upload",
 		"url": "npmjs.com/package/vue-photo-upload",
-		"description": "Published 2 Vue.js plugins to npm, namely vue-photo-upload & vue-live-edit. ",
+		"description": "Published a Vue.js plugin to npm, a component to handle photo uploads + minimal editing (scaling + cropping). ",
 		"skills": ["ES6", "npm", "Vue.js"]
 	},
 	{
+		"id": "project_6",
+		"date": "APR 2017",
+		"title": "Published vue-live-edit",
+		"url": "npmjs.com/package/vue-live-edit",
+		"description": "Published a Vue.js plugin to npm, to toggle editing mode & viewing mode for text fields",
+		"skills": ["ES6", "npm", "Vue.js"]
+	},
+	{
+		"id": "project_7",
+		"date": "FEB 2017",
+		"title": "Innovators LED Cube Simulator",
+		"url": "git.io/v7lcU",
+		"description": "A LED cube simulator and the judge control panel for the LED cube challenge at 'Innovators 2017', in university of Peradeniya",
+		"skills": ["Express", "Socket.io", "Vue.js", "Three.js"],
+		"hidden": true
+	},
+	{
+		"id": "project_8",
+		"date": "DEC 2016",
+		"title": "Serial Data Visualization Server",
+		"url": "git.io/v7lnQ",
+		"description": "A boilerplate project template I created to retrieve serial data and visualize them in a web interface",
+		"skills": ["Arduino", "NodeJS", "Express", "Socket.io"],
+		"hidden": true
+	},
+	{
+		"id": "project_9",
 		"date": "DEC 2016",
 		"title": "MyStay.lk",
 		"url": "mystay.lk",
@@ -35,6 +84,7 @@
 		"skills": ["OpenStreet Maps", "NodeJS", "Express", "Socket.io", "Vue.js"]
 	},
 	{
+		"id": "project_10",
 		"date": "NOV 2016",
 		"title": "Realtime Multiplayer Game",
 		"url": "imadx-game.herokuapp.com",
@@ -42,6 +92,7 @@
 		"skills": ["Go", "Iris", "WebSockets", "CreateJS"]
 	},
 	{
+		"id": "project_11",
 		"date": "JUL 2016",
 		"title": "Industrial Training Portal 2016",
 		"url": "[replaced with new version]",
@@ -49,10 +100,38 @@
 		"skills": ["HTML5", "CSS3", "jQuery", "CodeIgniter"]
 	},
 	{
+		"id": "project_12",
+		"date": "JUL 2016",
+		"title": "Perabeats Live",
+		"url": "github.com/imadx/perabeats_live",
+		"description": "A live scoreboard for perabeats, to show live scores at SLUG 2K16",
+		"skills": ["Express", "Mongoose", "Scoket.io"],
+		"hidden": true
+	},
+	{
+		"id": "project_13",
 		"date": "AUG 2016",
 		"title": "IoT Hub ",
 		"url": "github.com/imadx/IoT_hub",
 		"description": "[ACADEMIC PROJECT] An IOT Hub, to enable authorization, authentication, communication and data analysis for any custom IOT device given the configurations.",
 		"skills": ["Express", "MQTT", "Socket.io", "MongoDB"]
+	},
+	{
+		"id": "project_14",
+		"date": "SEP 2015",
+		"title": "Stock Auction Server",
+		"url": "github.com/imadx/stock_auction",
+		"description": "[ACADEMIC PROJECT] A client server model for an auction scenario (a case on a bidding on stocks) created in Java/JavaFX",
+		"skills": ["Java ", "JavaFX", "TCP", "telnet"],
+		"hidden": true
+	},
+	{
+		"id": "project_15",
+		"date": "SEP 2015",
+		"title": "Fractals GUI",
+		"url": "github.com/imadx/fractals",
+		"description": "[ACADEMIC PROJECT] A minimal GUI to render the fractal series for Mandelbrot and Julia Sets, implemented in Java ",
+		"skills": ["Java ", "Swing", "awt"],
+		"hidden": true
 	}
 ]
