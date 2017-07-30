@@ -69,7 +69,7 @@
 	{
 		"id": "project_8",
 		"date": "DEC 2016",
-		"title": "Serial Data Visualization Server",
+		"title": "Serial Data Visualization",
 		"url": "git.io/v7lnQ",
 		"description": "A boilerplate project template I created to retrieve serial data and visualize them in a web interface",
 		"skills": ["Arduino", "NodeJS", "Express", "Socket.io"],
@@ -93,23 +93,6 @@
 	},
 	{
 		"id": "project_11",
-		"date": "JUL 2016",
-		"title": "Industrial Training Portal 2016",
-		"url": "[replaced with new version]",
-		"description": "A web platform for university training assignment process, which was actively used in 2016.",
-		"skills": ["HTML5", "CSS3", "jQuery", "CodeIgniter"]
-	},
-	{
-		"id": "project_12",
-		"date": "JUL 2016",
-		"title": "Perabeats Live",
-		"url": "github.com/imadx/perabeats_live",
-		"description": "A live scoreboard for perabeats, to show live scores at SLUG 2K16",
-		"skills": ["Express", "Mongoose", "Scoket.io"],
-		"hidden": true
-	},
-	{
-		"id": "project_13",
 		"date": "AUG 2016",
 		"title": "IoT Hub ",
 		"url": "github.com/imadx/IoT_hub",
@@ -117,7 +100,51 @@
 		"skills": ["Express", "MQTT", "Socket.io", "MongoDB"]
 	},
 	{
+		"id": "project_12",
+		"date": "AUG 2016",
+		"title": "Design Portfolio ",
+		"url": "imadx3.herokuapp.com",
+		"description": "Uploaded a collection of graphic design work online, as a portfolio for design freelancing",
+		"skills": ["Heroku", "PHP", "Flash", "Photoshop", "Illustrator"],
+		"hidden": true
+	},
+	{
+		"id": "project_13",
+		"date": "JUL 2016",
+		"title": "Industrial Training Portal 2016",
+		"url": "[replaced with new version]",
+		"description": "A web platform for university training assignment process, which was actively used in 2016.",
+		"skills": ["HTML5", "CSS3", "jQuery", "CodeIgniter"]
+	},
+	{
 		"id": "project_14",
+		"date": "JUL 2016",
+		"title": "Perabeats Live",
+		"url": "github.com/imadx/perabeats_live",
+		"description": "A live scoreboard for perabeats, to show live scores at SLUG 2K16",
+		"skills": ["Express", "Mongoose", "Socket.io"],
+		"hidden": true
+	},
+	{
+		"id": "project_15",
+		"date": "MAR 2016",
+		"title": "Eventify Profile Pics",
+		"url": "apps.facebook.com/evntify",
+		"description": "An app to overlay event banners on your facebook profile picture",
+		"skills": ["Facebook API", "HTML5", "JavaScript", "Canvas"],
+		"hidden": true
+	},
+	{
+		"id": "project_16",
+		"date": "JAN 2016",
+		"title": "Ball Jabber Game",
+		"url": "apps.facebook.com/balljabber/",
+		"description": "An HTML5 click to play game, using Facebook API for user scores, etc.",
+		"skills": ["Facebook API", "HTML", "CSS", "JavaScript"],
+		"hidden":true
+	},
+	{
+		"id": "project_17",
 		"date": "SEP 2015",
 		"title": "Stock Auction Server",
 		"url": "github.com/imadx/stock_auction",
@@ -126,12 +153,21 @@
 		"hidden": true
 	},
 	{
-		"id": "project_15",
+		"id": "project_18",
 		"date": "SEP 2015",
 		"title": "Fractals GUI",
 		"url": "github.com/imadx/fractals",
 		"description": "[ACADEMIC PROJECT] A minimal GUI to render the fractal series for Mandelbrot and Julia Sets, implemented in Java ",
 		"skills": ["Java ", "Swing", "awt"],
+		"hidden": true
+	},
+	{
+		"id": "project_19",
+		"date": "APR 2015",
+		"title": "Slider Puzzle",
+		"url": "apps.facebook.com/sliderpuzzletimechal",
+		"description": "A facebook app, using Adobe Flash working together with JavaScript. Need flash support to test",
+		"skills": ["Facebook API", "Flash", "JavaScript"],
 		"hidden": true
 	}
 ]
