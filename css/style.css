@@ -365,6 +365,7 @@ small{
     padding-right: 1rem;
     font-weight: 100;
     line-height: 0.9;
+    margin-top: 0.1em;
 }
 #whoami h3{
     font-size: 1rem;
@@ -786,7 +787,7 @@ span.skill{
 	}
 
 	#whois ul li span{
-		display: block;
+		display: inline-block;
 		margin-right: 1em;
 	}
 
