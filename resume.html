@@ -1,4 +1,4 @@
-<h2>Resume <small>Last modified on Jul 28, 2017</small>
+<h2>My Resume <small>Last modified on Jul 30, 2017</small>
 <a class="right button relative-pos" title="Download my resume as a PDF" href="/pdf/resume_ishan_madhusanka.pdf" @click.stop="setDownloaded" download target="_blank" style="margin-left: 1em;">
 	<transition-group name="slide-fade" mode="out-in">
 		<i class="material-icons fixed-icon" v-if="!resume_downloaded" key="downloaded">picture_as_pdf</i>
@@ -8,6 +8,7 @@
 	Download Resume
 </a>
 <a class="right button" @click="hideResume"><span><i class="material-icons">arrow_back</i></span> Recent Projects</a>
+<div class="clearfix"></div>
 </h2>
 
 <div id="whoami" class="content-box">
@@ -23,7 +24,7 @@
 	<h2>Skills</h2>
 	<hr>
 	<h3>Tested skills</h3>
-	<p>For more results on tests, visit my <a href="https://www.upwork.com/o/profiles/users/_~019fb184fbddd12815/">upwork.com profile</a></p>
+	<p>For more results on tests, visit my <a href="https://www.upwork.com/o/profiles/users/_~019fb184fbddd12815/" target="_blank">upwork.com profile</a></p>
 	<div class="skill-list-tested">
 		<skill-component 
 			v-for="skill in skills_tested_list"
@@ -38,12 +39,13 @@
 		
 	</div>
 	<h3>Preferred skills</h3>
-	<p>From the listing below, the highlighted ones are the most preferred.</p>
+	<p>From the listing below, the ones in <b class="bold accent">green</b> are the most preferred.</p>
+	<br>
 	<table>
 		<tr v-for="(skills, category) in skills_list">
 			<td class="skill_title">{{category}}</td>
 			<td class="skill_list">
-				<span class="skill" v-for="skill in skills">{{skill}}</span>
+				<span class="skill" v-for="(skill, skill_idx) in skills" :class="{'bold':skills_preferred.indexOf(skill)>=0, 'grayscale faded':skills_preferred.indexOf(skill)<0}" :style="'opacity: ' + (1.0 * 1.4-(skill_idx/(1.0*skills.length)))">{{skill}}</span>
 			</td>
 		</tr>
 	</table>
@@ -53,7 +55,7 @@
 	<h2>Experience</h2>
 	<hr>
 	<div class="experience_item" v-for="item in experience">
-		<h3 class="bold">{{item.title}} | <a :href="url_item.link" v-for="url_item in item.url">{{url_item.caption}}</a> ( {{item.time}} )</h3>
+		<h3 class="bold">{{item.title}} | <a :href="url_item.link" v-for="url_item in item.url" target="_blank">{{url_item.caption}}</a> <span class="no-wrap">( {{item.time}} )</span></h3>
 		<div class="skills">
 			<span class="skill" v-for="skill in item.skills">{{skill}}</span>
 		</div>
@@ -69,8 +71,8 @@
 		<tr>
 			<th colspan="2"></th>
 			<th class="text-left">Competition</th>
-			<th class="text-left">Placement/Award</th>
-			<th class="text-right">Summary of Technical Stack</th>
+			<th v-show="!isTooCompactTimeline()" class="text-left left-padded">Placement/Award</th>
+			<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
 		</tr>
 		<template v-for="(item, index) in competitions">
 			<tr class="line-horizontal">
@@ -78,17 +80,24 @@
 				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(competitions.length-1))}"><span class="dot"> </span></td>
 				<td class="title"><span>{{item.title}}</span></td>
 				<td colspan="2" class="award-skills">
-					<span class="desc-secondary">
-						<img src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
+					<span class="desc-secondary" v-show="!isTooCompactTimeline()">
+						<img class="award-skills" src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
 						{{item.placement}}
 					</span>
 					
-					<div class="right"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+					<div class="right" v-show="!isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2"></td>
-				<td colspan="3" class="description"><span>{{item.description}}</span></td>
+				<td></td>
+				<td colspan="3" class="description">
+					<div class="small" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+					<span>{{item.description}}</span>
+					<span class="desc-secondary" v-show="isTooCompactTimeline()">
+						<img class="award-skills" src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
+						{{item.placement}}
+					</span>
+				</td>
 			</tr>
 		</template>
 	</table>
@@ -101,8 +110,8 @@
 		<tr>
 			<th colspan="2"></th>
 			<th class="text-left">Project</th>
-			<th class="text-left">URL</th>
-			<th class="text-right">Summary of Technical Stack</th>
+			<th v-show="!isTooCompactTimeline()" class="text-left left-padded">URL</th>
+			<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
 		</tr>
 		<template v-for="(item, index) in projects">
 			<tr class="line-horizontal">
@@ -110,16 +119,23 @@
 				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(projects.length-1))}"><span class="dot"> </span></td>
 				<td class="title"><span>{{item.title}}</span></td>
 				<td colspan="2" class="url-skills">
-					<span class="desc-secondary">
-						<img src="/img/icons/url.svg" alt="">
+					<a :href="'//' + item.url" class="desc-secondary" v-show="!isTooCompactTimeline()" target="_blank">
+						<img class="url-skills" src="/img/icons/url.svg" alt="">
 						{{item.url}}
-					</span>
-					<div class="right"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+					</a>
+					<div class="right" v-show="!isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
 				</td>
 			</tr>
 			<tr>
 				<td></td>
-				<td colspan="3" class="description"><span>{{item.description}}</span></td>
+				<td colspan="3" class="description">
+					<div class="small" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+					<span>{{item.description}}</span>
+					<a :href="'//' + item.url" class="desc-secondary" v-show="isTooCompactTimeline()" target="_blank">
+						<img class="url-skills" src="/img/icons/url.svg" alt="">
+						{{item.url}}
+					</a>
+				</td>
 			</tr>
 		</template>
 	</table>
@@ -176,7 +192,7 @@
 	</div>
 </div>
 <div class="terminal box">
-	<div class="content-box">
+	<div class="content-box" id="clubs">
 		<code class="code-heading">~$ tail clubs_and_societies -n 12</code>
 		<ul>
 

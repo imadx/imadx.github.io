@@ -5,31 +5,47 @@
         "C",
         "C#",
         "C++",
+        "Android",
+        "Windows Universal Platform",
         ".NET"
     ],
     "JS frameworks": [
         "Express.js",
         "Socket.io",
         "Vue.js",
-        "Angular.js"
+        "ReactJS",
+        "Angular.js",
+        "Ember.js",
+        "Meteor.js"
     ],
     "JS libraries": [
         "D3.js",
         "lodash.js",
+        "Axios",
         "Chartist.js",
         "Three.js",
-        "jQuery"
+        "Leaflet",
+        "Moment.js",
+        "jQuery",
+        "Highcharts",
+        "Phaser",
+        "Hammer.js",
+        "Chart.js"
     ],
     "CSS frameworks": [
         "Bootstrap",
         "MDL",
-        "SemanticUI"
+        "Materialize",
+        "SemanticUI",
+        "Bulma.io",
+        "Skeleton"
     ],
     "Database systems": [
         "MongoDB",
         "Mysql",
+        "SQLite",
         "PostgreSQL",
-        "SQLite"
+        "RethinkDB"
     ],
     "Backend frameworks": [
         "NodeJS",
@@ -41,19 +57,23 @@
     "Dev ops": [
         "Heroku",
         "Docker",
-        "Vagrant"
+        "Vagrant",
+        "Digital Ocean"
     ],
     "Distributed version control": [
         "git",
         "GitHub",
         "BitBucket",
+        "GitLab",
         "SourceTree"
     ],
     "Designing tools": [
         "AnimateCC",
         "Photoshop",
         "Illustrator",
-        "AE"
+        "CorelDRAW",
+        "After Effects",
+        "Premiere"
     ],
     "Theoretical knowledge": [
         "Operating Systems",

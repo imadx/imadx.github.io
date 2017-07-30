@@ -1,3 +1,9 @@
+let app;
+
+window.addEventListener('resize', function(){
+    app.window_width = window.innerWidth;
+});
+
 document.addEventListener('DOMContentLoaded', function () {
 
     let _lock = 4;
@@ -11,20 +17,36 @@ document.addEventListener('DOMContentLoaded', function () {
         let header = document.getElementById('header');
         let parallax = document.getElementById('parallax');
         let profile = document.getElementById('profile');
+        let notification_area = document.getElementById('notification_area');
 
         function checkScroll(scroll_pos) {
             if(header.clientHeight == 0) {
                 header = document.getElementById('header');
                 parallax = document.getElementById('parallax');
                 profile = document.getElementById('profile');
+                notification_area = document.getElementById('notification_area');
             }
 
             if (scroll_pos < header.clientHeight) {
                 parallax.style.transform = 'translateY(' + scroll_pos*0.5 + 'px)';
                 profile.style.transform = 'translateY(' + scroll_pos*0.4 + 'px)';
                 profile.style.opacity =  1 -(scroll_pos/header.clientHeight);
+
+
+
+            } 
+
+            if(scroll_pos > header.clientHeight + 250) {
+                if(notification_area.classList.contains('not-visible')){
+                    notification_area.classList.remove('not-visible');
+                }
+            } else {
+                if(!notification_area.classList.contains('not-visible')){
+                    notification_area.classList.add('not-visible');
+                }
             }
         }
+
         window.addEventListener('scroll', function (e) {
             last_known_scroll_position = window.scrollY;
             if (!ticking) {
@@ -70,8 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         <circle fill="none" stroke="#eee" stroke-width="10" cx="100"  cy="100" r="85"/>\
                         <path :id="skill" fill="none" stroke="#00a859" stroke-width="20" :d="arc_d"/>\
                     </svg>\
-                    <img :src="getImageSource(image)" :width="image_width" :height="image_height" alt="">\
-                    <span class="score">{{score}}/5.00</span>\
+                    <img :src="getImageSource(image)" :width="image_width" :height="image_height" :alt="skill">\
+                    <span class="score">{{score}}<small>/5.00</small></span>\
                     <span class="ranking" :class="formatRanking(ranking)">{{ranking}}</span>\
                     <span class="date">{{date}}</span>\
                 </div>\
@@ -83,7 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     image_height: undefined,
                     image_width: undefined,
 
-                    animating: false
+                    animating: false,
+                    _random: 0
                 }
             },
             methods: {
@@ -98,6 +121,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if(this.animating){
                         return;
                     }
+                    this._random = Math.floor(Math.random()*8);
                     this.animating = true;
                     let vm = this;
                     let start = performance.now();
@@ -119,13 +143,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 setAnimations: function(_progress){
                     let _score = this.score;
-                    let _angle = 360 * (_score * ((1.1-Math.abs(_progress-0.5)/5))/5.0);
+                    let _angle = 360 * (_score * ((1.05-Math.abs(_progress-0.5)/10))/5.0);
                     if(_angle > 359) _angle = 359;
 
                     this.arc_d = this.describeArc(100, 100, 85, 0, _angle);
                 },
                 timingFunction: function(t){
-                    let _ret = (1-t*t) * Math.sin(t*5);
+                    let _ret = (1-t) * (1-t) * (1-t) * Math.sin(t*(this._random + 3));
                     return _ret;
                 },
 
@@ -164,18 +188,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         })
-        let app = new Vue({
+        app = new Vue({
             el: '#app',
             components: [skillComponent],
             data: {
                 visible_resume: true,
                 resume_downloaded: false,
 
+                window_width: window.innerWidth,
+
                 competitions: [],
                 projects: [],
                 skills_list: {},
                 skills_tested_list: [],
-                experience: [],
+                skills_preferred: [],
+                experience: []
+
             },
             methods: {
                 showResume: function(){
@@ -198,6 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     vm.getEntity('/data/data_projects.json', 'projects');
                     vm.getEntity('/data/data_skills_list.json', 'skills_list');
                     vm.getEntity('/data/data_skills_tested_list.json', 'skills_tested_list');
+                    vm.getEntity('/data/data_skills_preferred.json', 'skills_preferred');
                     vm.getEntity('/data/data_experience.json', 'experience');
 
                 },
@@ -211,6 +240,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         console.error(err);
                     });
 
+                },
+                isCompactTimeline: function(){
+                    return this.window_width<980;
+                },
+                isTooCompactTimeline: function(){
+                    return this.window_width<768;
                 }
             },
             watch: {

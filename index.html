@@ -65,6 +65,19 @@ limitations under the License.
 <body>
   <div class="wrapper" id="app">
     <header id="header"></header>
+    <div id="notification_area" class="not-visible">
+      <div id="profile">
+        <img src="./img/profile.png" alt="" class="profile-pic">
+        <hgroup>
+          <h1>Ishan Madhusanka</h1>
+          <h2>Full Stack Developer + UI/UX Enthusiast</h2>
+        </hgroup>
+      </div>
+      <div class="contacts">
+        <a href="mailto:ahtimadhusanka@gmail.com"><i class="material-icons">message</i> <span>ahtimadhusanka@gmail.com</span></a>
+        <a href="tel:94716451456"><i class="material-icons">phone</i> <span>(+94)71 645 1456</span></a>
+      </div>
+    </div>
     <div id="content-wrapper">
       <transition-group name="slide-fade" mode="out-in">
         <section v-if="visible_resume" id="resume" key="resume"></section>
