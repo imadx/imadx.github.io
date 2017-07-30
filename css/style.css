@@ -111,6 +111,7 @@ section#resume{
 	margin-top: 8vh;
 	margin-bottom: 8vh;
 }
+section#content h2 > span,
 section#resume h2 > span{
 	line-height: 50px;
 }
