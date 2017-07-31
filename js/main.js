@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.cancelAnimationFrame(_scroll_requestframe_id);
                 _scroll_requestframe_id = window.requestAnimationFrame(function(_time){
                     
-                    parallax.style.transform = 'translateY(' + scroll_pos*0.8 + 'px)';
+                    parallax.style.transform = 'translateY(' + ((scroll_pos*0.8)-100) + 'px)';
 
-                    let _scale = 1*(1-scroll_pos/header.clientHeight);
-                    profile.style.transform = 'translateY(' + scroll_pos*0.6 + 'px) scale(' + _scale + ',' + _scale + ')';
+                    let _scale = Math.min(1.5*(1-scroll_pos/header.clientHeight), 1);
+                    profile.style.transform = 'translateY(' + scroll_pos*0.5 + 'px) scale(' + _scale + ',' + _scale + ')';
                     profile.style.opacity =  1 -(scroll_pos/header.clientHeight);
                     
                 })
