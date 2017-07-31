@@ -28,7 +28,6 @@
 	<p>For more results on tests, visit my <a href="https://www.upwork.com/o/profiles/users/_~019fb184fbddd12815/" target="_blank">upwork.com profile</a></p>
 	<div class="skill-list-tested">
 		<skill-component 
-			v-once
 			v-for="skill in skills_tested_list"
 			:key="skill.name"
 			:skill="skill.name"
@@ -45,7 +44,7 @@
 	<p>From the listing below, the ones in <b class="bold accent">green</b> are the most preferred.</p>
 	<br>
 	<table>
-		<tr v-for="(skills, category) in skills_list" v-once>
+		<tr v-for="(skills, category) in skills_list">
 			<td class="skill_title">{{category}}</td>
 			<td class="skill_list">
 				<span class="skill" v-for="(skill, skill_idx) in skills" :class="{'bold':skills_preferred.indexOf(skill)>=0, 'grayscale faded':skills_preferred.indexOf(skill)<0}" :style="'opacity: ' + (1.0 * 1.4-(skill_idx/(1.0*skills.length)))">{{skill}}</span>
@@ -57,7 +56,7 @@
 	<code class="code-heading">~$ history</code>
 	<h2>Experience</h2>
 	<hr>
-	<div class="experience_item" v-for="item in experience" v-once>
+	<div class="experience_item" v-for="item in experience">
 		<h3 class="bold">{{item.title}} | <a :href="url_item.link" v-for="url_item in item.url" target="_blank">{{url_item.caption}}</a> <span class="no-wrap">( {{item.time}} )</span></h3>
 		<div class="skills">
 			<span class="skill" v-for="skill in item.skills">{{skill}}</span>
@@ -77,7 +76,7 @@
 			<th v-show="!isTooCompactTimeline()" class="text-left left-padded">Placement/Award</th>
 			<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
 		</tr>
-		<template v-for="(item, index) in competitions" v-once>
+		<template v-for="(item, index) in competitions">
 			<tr class="line-horizontal">
 				<td class="date"><span>{{item.date}}</span></td>
 				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(competitions.length-1))}"><span class="dot"> </span></td>
