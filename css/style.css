@@ -862,7 +862,7 @@ svg#artwork{
 	background: #fff;
 	z-index: 9999;
 	opacity: 1;
-	transition: all .5s ease;
+	transition: opacity .5s ease, display .5s ease .5s;
 }
 #loader span{
 	padding-top: 0.2em;

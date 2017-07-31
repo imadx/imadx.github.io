@@ -358,7 +358,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     document.getElementById('loaded_content_idx').innerText = 'Completed';
 
                     setTimeout(function(){
-                        document.getElementById('loader').style = 'display: none;';
+                        document.getElementById('loader').style = 'display: none; visibility: hidden; z-index: -1000;';
                     }, 500)
                 },10);
             }
