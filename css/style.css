@@ -850,6 +850,7 @@ svg#artwork{
 	}
 }
 #loader{
+	pointer-events: none;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
