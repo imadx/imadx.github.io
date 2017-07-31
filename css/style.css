@@ -252,6 +252,10 @@ small{
 .relative-pos{
 	position: relative;
 }
+.padded-y{
+	padding-top: 0.5em;
+	padding-bottom: 0.1em;
+}
 /* Vue transitions */
 .slide-fade-enter-active {
   transition: all .3s ease .3s;
@@ -823,6 +827,10 @@ span.skill{
 	}
 	#notification_area hgroup{
 		display: none;
+	}
+	.timeline td.date{
+		width: 50px;
+		height: 12px;
 	}
 	
 }

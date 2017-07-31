@@ -58,7 +58,7 @@
 	<hr>
 	<div class="experience_item" v-for="item in experience">
 		<h3 class="bold">{{item.title}} | <a :href="url_item.link" v-for="url_item in item.url" target="_blank">{{url_item.caption}}</a> <span class="no-wrap">( {{item.time}} )</span></h3>
-		<div class="skills">
+		<div class="skills padded-y">
 			<span class="skill" v-for="skill in item.skills">{{skill}}</span>
 		</div>
 		<p>{{item.description}}</p>
@@ -93,8 +93,8 @@
 			<tr>
 				<td></td>
 				<td colspan="3" class="description">
-					<div class="small" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
-					<span>{{item.description}}</span>
+					<span class="padded-y">{{item.description}}</span>
+					<div class="small padded-y" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
 					<span class="desc-secondary" v-show="isTooCompactTimeline()">
 						<img class="award-skills" src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
 						{{item.placement}}
@@ -134,8 +134,8 @@
 					<tr :key="'row_2_' + item.id">
 						<td></td>
 						<td colspan="3" class="description">
-							<div class="small" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
-							<span>{{item.description}}</span>
+							<span class="padded-y">{{item.description}}</span>
+							<div class="small padded-y" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
 							<a :href="'//' + item.url" class="desc-secondary" v-show="isTooCompactTimeline()" target="_blank">
 								<img class="url-skills" src="/img/icons/url.svg" alt="">
 								{{item.url}}
