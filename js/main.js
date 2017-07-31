@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function () {
         let profile = document.getElementById('profile');
         let notification_area = document.getElementById('notification_area');
 
+        let _scroll_requestframe_id = null;
+
         function checkScroll(scroll_pos) {
             if(header.clientHeight == 0) {
                 header = document.getElementById('header');
@@ -36,9 +38,16 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             if (scroll_pos < header.clientHeight) {
-                parallax.style.transform = 'translateY(' + scroll_pos*0.5 + 'px)';
-                profile.style.transform = 'translateY(' + scroll_pos*0.4 + 'px)';
-                profile.style.opacity =  1 -(scroll_pos/header.clientHeight);
+                window.cancelAnimationFrame(_scroll_requestframe_id);
+                _scroll_requestframe_id = window.requestAnimationFrame(function(_time){
+                    
+                    parallax.style.transform = 'translateY(' + scroll_pos*0.8 + 'px)';
+
+                    let _scale = 1*(1-scroll_pos/header.clientHeight);
+                    profile.style.transform = 'translateY(' + scroll_pos*0.6 + 'px) scale(' + _scale + ',' + _scale + ')';
+                    profile.style.opacity =  1 -(scroll_pos/header.clientHeight);
+                    
+                })
                 if(app && !app.animation_id){
                     app.animation_id = window.requestAnimationFrame(app.animateArtwork);
                 }

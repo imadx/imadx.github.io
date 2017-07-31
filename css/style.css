@@ -36,7 +36,6 @@ header, footer{
 	position: relative;
 }
 footer{
-	background: #1e2327;
 	font-size: 10pt;
 	color: rgba(255,255,255,0.8)
 }
@@ -45,6 +44,8 @@ header{
 	padding-bottom: calc(20vh + 4vh);
 	overflow: hidden;
 	box-sizing: border-box;
+	z-index: -2;
+	background-color: #1e2327;
 }
 header h1{
 	font-weight: 100;
@@ -81,6 +82,7 @@ header .bg{
 	position: absolute;
 	top: 0;
 	left: 0;
+	background-color: #1e2327;
 	background-image: url('../img/bg.jpg');
 	background-size: cover;
 	background-position: center;
@@ -888,4 +890,10 @@ svg#artwork{
 #loader svg.loader circle{
 	transform-origin: 50% 50%;
 	animation: loading-anim 0.3s ease infinite;
+}
+
+#header,
+#parallax,
+#profile{
+	transition: all 1s cubic-bezier(0.01, 1.29, 0.59, 0.99)
 }
