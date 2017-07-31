@@ -838,3 +838,51 @@ svg#artwork{
 	}
 	
 }
+@keyframes loading-anim{
+	0%{
+		opacity: 0;
+		transform: scale(0.5,0.5);
+	}
+	50%{ opacity: 1 }
+	100%{
+		opacity: 0;
+		transform: scale(1,1);
+	}
+}
+#loader{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #fff;
+	z-index: 9999;
+	opacity: 1;
+	transition: all .5s ease;
+}
+#loader span{
+	padding-top: 0.2em;
+	font-size: 8pt;
+}
+#loader.loaded{
+	opacity: 0;
+}
+#loader svg.loader{
+	transition: all 1s;
+}
+#loader.loaded svg.loader{
+	transform: scale(1.5,1.5);
+	opacity: 0;
+}
+#loader svg.loader{
+	width: 50px;
+	height: 50px;
+}
+#loader svg.loader circle{
+	transform-origin: 50% 50%;
+	animation: loading-anim 0.3s ease infinite;
+}

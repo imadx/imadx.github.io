@@ -48,7 +48,7 @@ limitations under the License.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- FONT
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- <link href="//fonts.googleapis.com/css?family=Roboto:200,300,600" rel="stylesheet" type="text/css"> -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:200,400,600" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- CSS
@@ -57,13 +57,16 @@ limitations under the License.
   <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="/img/assets/favicon.png">
-  <script src="/js/axios.min.js"></script>
-  <script src="/js/jquery.js"></script>
-  <script src="/js/vue.min.js"></script>
 </head>
 
 <body>
   <div class="wrapper" id="app">
+    <div id="loader">
+      <svg class="loader" viewbox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke-width="10" stroke="#00a859" fill="none"> 
+        <span class="uppercase faded">waiting for content... (<span id="loaded_content_idx">0/5</span>)</span>
+      </svg>
+    </div>
     <header id="header"></header>
     <div id="notification_area" class="not-visible">
       <div id="profile">
@@ -86,6 +89,10 @@ limitations under the License.
     </div>
     <footer id="footer"></footer>
   </div>
+
+  <script src="/js/axios.min.js"></script>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/vue.min.js"></script>
 
   <script src="./js/main.js"></script>
 </body>

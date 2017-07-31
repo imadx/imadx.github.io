@@ -6,8 +6,16 @@ window.addEventListener('resize', function(){
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    let _lock = 4;
+    let _content_size = 5;
+    let _lock = _content_size;
 
+    axios.get('/img/bg.jpg').then(function(res){
+        _lock--;
+        document.getElementById('loaded_content_idx').innerText = (_content_size - _lock) + '/5';
+        if(_lock == 0){
+            initialize_app();
+        }
+    })
     axios.get('/header.html')
     .then(function (res) {
         document.getElementById('header').innerHTML = res.data;
@@ -31,12 +39,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 parallax.style.transform = 'translateY(' + scroll_pos*0.5 + 'px)';
                 profile.style.transform = 'translateY(' + scroll_pos*0.4 + 'px)';
                 profile.style.opacity =  1 -(scroll_pos/header.clientHeight);
-                if(!app.animation_id){
+                if(app && !app.animation_id){
                     app.animation_id = window.requestAnimationFrame(app.animateArtwork);
                 }
             } else {
-                window.cancelAnimationFrame(app.animation_id);
-                app.animation_id = null;
+                if(app && app.animation_id) {
+                    window.cancelAnimationFrame(app.animation_id);
+                    app.animation_id = null;
+                }
             }
 
             if(scroll_pos > header.clientHeight + 250) {
@@ -62,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         _lock--;
+        document.getElementById('loaded_content_idx').innerText = (_content_size - _lock) + '/5';
         if(_lock == 0){
             initialize_app();
         }
@@ -78,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById(id).innerHTML = res.data;
 
             _lock--;
+            document.getElementById('loaded_content_idx').innerText = (_content_size - _lock) + '/5';
             if(_lock == 0){
                 initialize_app();
             }
@@ -86,6 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initialize_app(){
 
+        console.log('[imadx.github.io] content loaded.')
         console.log('[imadx.github.io] initializing app...')
 
         let skillComponent = Vue.component('skill-component', {
@@ -339,6 +352,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     app._xmouse_pos = e.clientY;
                     app._ymouse_pos = e.clientY;
                 })
+
+                setTimeout(function(){
+                    document.getElementById('loader').classList.add('loaded');
+                    document.getElementById('loaded_content_idx').innerText = 'Completed';
+
+                    setTimeout(function(){
+                        document.getElementById('loader').style = 'display: none;';
+                    }, 500)
+                },10);
             }
         })
             
