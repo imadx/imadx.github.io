@@ -23,7 +23,7 @@
 }
 
 html, body{
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto', 'Helvetica', 'Segoe UI', sans-serif;
 	font-weight: normal;
 	margin: 0;
 	padding: 0;
@@ -47,18 +47,20 @@ header{
 	box-sizing: border-box;
 }
 header h1{
-	font-weight: lighter;
+	font-weight: 100;
+
 }
 
 p{
 	text-align: justify;
 }
 header .contacts{
-	background: rgba(0,0,0,0.3);
+	background: rgba(0,0,0,0.2);
 	position: absolute;
 	bottom: 0px;
 	left: 0;
 	width: 100vw;
+	box-shadow: 0 -4px 6px -1px #000 inset;
 }
 header .contacts a{
 	display: inline-flex;
