@@ -5,7 +5,7 @@
 		"title": "SVG Path Animation",
 		"url": "svg-path-animation.herokuapp.com",
 		"description": "A simpler approach to create an animated sine wave using SVG paths",
-		"skills": ["SVG", "HTML5", "Vue.js",],
+		"skills": ["SVG", "HTML5", "Vue.js"],
 		"hidden": true
 	},
 	{
