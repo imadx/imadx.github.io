@@ -1,7 +1,74 @@
-import axios from 'axios';
-import Vue from 'vue';
-
-import skillComponent from './components/skillComponent.vue';
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports) {
 
 let app;
 
@@ -20,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if(_lock == 0){
             initialize_app();
         }
-    });
-
+    })
     axios.get('/header.html')
     .then(function (res) {
         document.getElementById('header').innerHTML = res.data;
@@ -53,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     profile.style.transform = 'translateY(' + scroll_pos*0.5 + 'px) scale(' + _scale + ',' + _scale + ')';
                     profile.style.opacity =  1 -(scroll_pos/header.clientHeight);
                     
-                });
+                })
                 if(app && !app.animation_id){
                     app.animation_id = window.requestAnimationFrame(app.animateArtwork);
                 }
@@ -113,8 +179,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function initialize_app(){
 
-        console.log('[imadx.github.io] content loaded.');
-        console.log('[imadx.github.io] initializing app...');
+        console.log('[imadx.github.io] content loaded.')
+        console.log('[imadx.github.io] initializing app...')
 
         let skillComponent = Vue.component('skill-component', {
             template: '\
@@ -138,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     animating: false,
                     _random: 0
-                };
+                }
             },
             methods: {
                 getImageSource: function(_img){
@@ -210,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             mounted: function(){
 
-                console.log('[imadx.github.io] skill-component created...', this.skill);
+                console.log('[imadx.github.io] skill-component created...', this.skill)
 
                 if(this.imagewidth >= this.imageheight) {
                     this.image_width = 80;
@@ -218,8 +284,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     this.image_height = 70;
                 }
             }
-        });
-
+        })
         app = new Vue({
             el: '#app',
             components: [skillComponent],
@@ -248,11 +313,11 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             methods: {
                 showResume: function(){
-                    console.log('[imadx.github.io] switching to resume...');
+                    console.log('[imadx.github.io] switching to resume...')
                     this.visible_resume = true;
                 },
                 hideResume: function(){
-                    console.log('[imadx.github.io] switching to homepage...');
+                    console.log('[imadx.github.io] switching to homepage...')
                     this.visible_resume = false;
                 },
                 showHiddenProjects: function(){
@@ -264,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 },
                 setDownloaded: function(){
-                    console.log('[imadx.github.io] cv downloaded..');
+                    console.log('[imadx.github.io] cv downloaded..')
                     this.resume_downloaded = true;
                 },
                 getAllData: function(){
@@ -285,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     axios.get(_url).then(function(res){
                         vm[_local_var] = res.data;
                     }).catch(function(err){
-                        console.error('[imadx.github.io] error in retrieving data.');
+                        console.error('[imadx.github.io] error in retrieving data.')
                         console.error(err);
                     });
 
@@ -302,8 +367,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             r: Math.random() * 10,
                             vx: 10,
                             vy: 10,
-                        };
-
+                        }
                         _circles[i] = _data;
                     }
 
@@ -368,7 +432,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     app._ymouse = e.movementY;
                     app._xmouse_pos = e.clientY;
                     app._ymouse_pos = e.clientY;
-                });
+                })
 
                 setTimeout(function(){
                     document.getElementById('loader').classList.add('loaded');
@@ -376,11 +440,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     setTimeout(function(){
                         document.getElementById('loader').style = 'display: none; visibility: hidden; z-index: -1000;';
-                    }, 500);
+                    }, 500)
                 },10);
             }
-        });
+        })
             
     }
 
 });
+
+
+/***/ })
+/******/ ]);

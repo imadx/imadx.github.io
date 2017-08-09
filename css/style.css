@@ -45,7 +45,7 @@ header{
 	padding-bottom: calc(20vh + 4vh);
 	overflow: hidden;
 	box-sizing: border-box;
-	z-index: -2;
+	z-index: 1;
 	background-color: #1e2327;
 }
 header h1{
