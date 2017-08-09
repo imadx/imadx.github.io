@@ -5,6 +5,12 @@ import skillComponent from './components/skillComponent.vue';
 
 let app;
 
+document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function(){
+        document.getElementById('loaded_content_idx').innerText = "It's taking forever...Try Google Chrome!";
+    }, 10000);
+});
+
 window.addEventListener('resize', function(){
     app.window_width = window.innerWidth;
 });

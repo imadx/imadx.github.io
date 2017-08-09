@@ -957,6 +957,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
   var app = void 0;
 
+  document.addEventListener('DOMContentLoaded', function () {
+    setTimeout(function () {
+      document.getElementById('loaded_content_idx').innerText = "It's taking forever...Try Google Chrome!";
+    }, 10000);
+  });
+
   window.addEventListener('resize', function () {
     app.window_width = window.innerWidth;
   });
@@ -2278,6 +2284,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 /* 30 */
 /***/function (module, exports, __webpack_require__) {
 
+  var disposed = false;
   var Component = __webpack_require__(31)(
   /* script */
   __webpack_require__(27),
@@ -2289,6 +2296,33 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   null,
   /* moduleIdentifier (server only) */
   null);
+  Component.options.__file = "c:\\git\\imadx.github.io\\js\\components\\skillComponent.vue";
+  if (Component.esModule && Object.keys(Component.esModule).some(function (key) {
+    return key !== "default" && key.substr(0, 2) !== "__";
+  })) {
+    console.error("named exports are not supported in *.vue files.");
+  }
+  if (Component.options.functional) {
+    console.error("[vue-loader] skillComponent.vue: functional components are not supported with templates, they should use render functions.");
+  }
+
+  /* hot reload */
+  if (false) {
+    (function () {
+      var hotAPI = require("vue-hot-reload-api");
+      hotAPI.install(require("vue"), false);
+      if (!hotAPI.compatible) return;
+      module.hot.accept();
+      if (!module.hot.data) {
+        hotAPI.createRecord("data-v-515effc8", Component.options);
+      } else {
+        hotAPI.reload("data-v-515effc8", Component.options);
+      }
+      module.hot.dispose(function (data) {
+        disposed = true;
+      });
+    })();
+  }
 
   module.exports = Component.exports;
 
@@ -2381,7 +2415,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   /***/
 },
 /* 32 */
-/***/function (module, exports) {
+/***/function (module, exports, __webpack_require__) {
 
   module.exports = { render: function render() {
       var _vm = this;var _h = _vm.$createElement;var _c = _vm._self._c || _h;
@@ -2434,9 +2468,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }, [_vm._v(_vm._s(_vm.ranking))]), _vm._v(" "), _c('span', {
         staticClass: "date"
       }, [_vm._v(_vm._s(_vm.date))])]);
-    }, staticRenderFns: []
+    }, staticRenderFns: [] };
+  module.exports.render._withStripped = true;
+  if (false) {
+    module.hot.accept();
+    if (module.hot.data) {
+      require("vue-hot-reload-api").rerender("data-v-515effc8", module.exports);
+    }
+  }
 
-    /***/ };
+  /***/
 },
 /* 33 */
 /***/function (module, exports, __webpack_require__) {

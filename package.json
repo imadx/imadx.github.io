@@ -27,7 +27,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
-    "babel": "babel dist/bundle.js -o dist/bundle.js",
+    "babel": "babel dist/bundle.js -o dist/bundle.js"
   },
   "repository": {
     "type": "git",
