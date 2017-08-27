@@ -103,14 +103,6 @@
 	{
 		"id": "project_12",
 		"date": "AUG 2016",
-		"title": "IoT Hub ",
-		"url": "github.com/imadx/IoT_hub",
-		"description": "[ACADEMIC PROJECT] An IOT Hub, to enable authorization, authentication, communication and data analysis for any custom IOT device given the configurations.",
-		"skills": ["Express", "MQTT", "Socket.io", "MongoDB"]
-	},
-	{
-		"id": "project_13",
-		"date": "AUG 2016",
 		"title": "Design Portfolio ",
 		"url": "imadx3.herokuapp.com",
 		"description": "Uploaded a collection of graphic design work online, as a portfolio for design freelancing",
@@ -118,7 +110,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_14",
+		"id": "project_13",
 		"date": "JUL 2016",
 		"title": "Industrial Training Portal 2016",
 		"url": "[replaced with new version]",
@@ -126,7 +118,7 @@
 		"skills": ["HTML5", "CSS3", "jQuery", "CodeIgniter"]
 	},
 	{
-		"id": "project_15",
+		"id": "project_14",
 		"date": "JUL 2016",
 		"title": "Perabeats Live",
 		"url": "github.com/imadx/perabeats_live",
@@ -135,7 +127,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_16",
+		"id": "project_15",
 		"date": "MAR 2016",
 		"title": "Eventify Profile Pics",
 		"url": "apps.facebook.com/evntify",
@@ -144,7 +136,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_17",
+		"id": "project_16",
 		"date": "JAN 2016",
 		"title": "Ball Jabber Game",
 		"url": "apps.facebook.com/balljabber/",
@@ -153,7 +145,7 @@
 		"hidden":true
 	},
 	{
-		"id": "project_18",
+		"id": "project_17",
 		"date": "SEP 2015",
 		"title": "Stock Auction Server",
 		"url": "github.com/imadx/stock_auction",
@@ -162,13 +154,21 @@
 		"hidden": true
 	},
 	{
-		"id": "project_19",
+		"id": "project_18",
 		"date": "SEP 2015",
 		"title": "Fractals GUI",
 		"url": "github.com/imadx/fractals",
 		"description": "[ACADEMIC PROJECT] A minimal GUI to render the fractal series for Mandelbrot and Julia Sets, implemented in Java ",
 		"skills": ["Java ", "Swing", "awt"],
 		"hidden": true
+	},
+	{
+		"id": "project_19",
+		"date": "AUG 2015",
+		"title": "IoT Hub ",
+		"url": "github.com/imadx/IoT_hub",
+		"description": "[ACADEMIC PROJECT] An IOT Hub, to enable authorization, authentication, communication and data analysis for any custom IOT device given the configurations.",
+		"skills": ["Express", "MQTT", "Socket.io", "MongoDB"]
 	},
 	{
 		"id": "project_20",
