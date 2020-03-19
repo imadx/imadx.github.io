@@ -1,6 +1,10 @@
 {
     "Application development": [
         "HTML5 + Javascript",
+        "Flutter",
+        "React Native",
+        "NodeJS",
+        "Electron",
         "Java",
         "C",
         "C#",
@@ -10,6 +14,12 @@
         ".NET"
     ],
     "JS frameworks": [
+        "Svelte",
+        "Marko",
+        "FeatherJS",
+        "Fastify",
+        "Angular9",
+        "FeatherJS",
         "Express.js",
         "Socket.io",
         "Vue.js",
@@ -55,6 +65,7 @@
         "Tornado"
     ],
     "Dev ops": [
+        "AWS",
         "Heroku",
         "Docker",
         "Vagrant",

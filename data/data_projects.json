@@ -1,6 +1,33 @@
 [
 	{
 		"id": "project_0",
+		"date": "FEB 2020",
+		"title": "API Hit test",
+		"url": "api-hit-test.herokuapp.com",
+		"description": "A minimal test endpoint, to check if blind code, serverless functions are triggered, when you don't have access to logs",
+		"skills": ["FeatherJS", "HTML5"],
+		"hidden": false
+	},
+	{
+		"id": "project_1",
+		"date": "FEB 2020",
+		"title": "JS Performance Benchmark tool",
+		"url": "js-perf.firebaseapp.com",
+		"description": "A minimal online benchmark tool to compare JS snippets online",
+		"skills": ["Svelte", "HTML5", "SCSS"],
+		"hidden": false
+	},
+	{
+		"id": "project_2",
+		"date": "OCT 2019",
+		"title": "VSCode Dimension Converter",
+		"url": "bit.ly/vs-code-plugin-dimension-converter",
+		"description": "A quick and dirty extension for Visual Studio Code, to convert CSS dimensions to an internal project specific unit",
+		"skills": ["JavaScript", "VSCode API"],
+		"hidden": false
+	},
+	{
+		"id": "project_3",
 		"date": "AUG 2017",
 		"title": "SVG Path Animation",
 		"url": "svg-path-animation.herokuapp.com",
@@ -9,7 +36,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_1",
+		"id": "project_4",
 		"date": "JUL 2017",
 		"title": "My Portfolio",
 		"url": "imadx.github.io",
@@ -18,7 +45,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_2",
+		"id": "project_5",
 		"date": "JUL 2017",
 		"title": "Industrial Training Portal",
 		"url": "itportal.ce.pdn.ac.lk",
@@ -26,7 +53,7 @@
 		"skills": ["NodeJS", "Express", "Socket.io", "Vue.js", "MongoDB"]
 	},
 	{
-		"id": "project_3",
+		"id": "project_6",
 		"date": "JUN 2017",
 		"title": "Pera Hockey Match Scheduler ",
 		"url": "perahockey.herokuapp.com",
@@ -34,7 +61,7 @@
 		"skills": ["NodeJS", "Express", "Vue.js"]
 	},
 	{
-		"id": "project_4",
+		"id": "project_7",
 		"date": "MAY 2017",
 		"title": "ACES Hackathon 2017 Scores",
 		"url": "hackathon-17.herokuapp.com",
@@ -42,7 +69,7 @@
 		"skills": ["NodeJS", "Express", "Socket.io", "Vue.js"]
 	},
 	{
-		"id": "project_5",
+		"id": "project_8",
 		"date": "MAY 2017",
 		"title": "Realtime NodeJS Starter",
 		"url": "git.io/v7lcK",
@@ -51,7 +78,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_6",
+		"id": "project_9",
 		"date": "APR 2017",
 		"title": "Published vue-photo-upload",
 		"url": "npmjs.com/package/vue-photo-upload",
@@ -59,7 +86,7 @@
 		"skills": ["ES6", "npm", "Vue.js"]
 	},
 	{
-		"id": "project_7",
+		"id": "project_10",
 		"date": "APR 2017",
 		"title": "Published vue-live-edit",
 		"url": "npmjs.com/package/vue-live-edit",
@@ -67,7 +94,7 @@
 		"skills": ["ES6", "npm", "Vue.js"]
 	},
 	{
-		"id": "project_8",
+		"id": "project_11",
 		"date": "FEB 2017",
 		"title": "Innovators LED Cube Simulator",
 		"url": "git.io/v7lcU",
@@ -76,7 +103,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_9",
+		"id": "project_12",
 		"date": "DEC 2016",
 		"title": "Serial Data Visualization",
 		"url": "git.io/v7lnQ",
@@ -85,7 +112,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_10",
+		"id": "project_13",
 		"date": "DEC 2016",
 		"title": "MyStay.lk",
 		"url": "mystay.lk",
@@ -93,7 +120,7 @@
 		"skills": ["OpenStreet Maps", "NodeJS", "Express", "Socket.io", "Vue.js"]
 	},
 	{
-		"id": "project_11",
+		"id": "project_14",
 		"date": "NOV 2016",
 		"title": "Realtime Multiplayer Game",
 		"url": "imadx-game.herokuapp.com",
@@ -101,7 +128,7 @@
 		"skills": ["Go", "Iris", "WebSockets", "CreateJS"]
 	},
 	{
-		"id": "project_12",
+		"id": "project_15",
 		"date": "AUG 2016",
 		"title": "Design Portfolio ",
 		"url": "imadx3.herokuapp.com",
@@ -110,7 +137,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_13",
+		"id": "project_16",
 		"date": "JUL 2016",
 		"title": "Industrial Training Portal 2016",
 		"url": "[replaced with new version]",
@@ -118,7 +145,7 @@
 		"skills": ["HTML5", "CSS3", "jQuery", "CodeIgniter"]
 	},
 	{
-		"id": "project_14",
+		"id": "project_17",
 		"date": "JUL 2016",
 		"title": "Perabeats Live",
 		"url": "github.com/imadx/perabeats_live",
@@ -127,7 +154,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_15",
+		"id": "project_18",
 		"date": "MAR 2016",
 		"title": "Eventify Profile Pics",
 		"url": "apps.facebook.com/evntify",
@@ -136,7 +163,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_16",
+		"id": "project_19",
 		"date": "JAN 2016",
 		"title": "Ball Jabber Game",
 		"url": "apps.facebook.com/balljabber/",
@@ -145,7 +172,7 @@
 		"hidden":true
 	},
 	{
-		"id": "project_17",
+		"id": "project_20",
 		"date": "SEP 2015",
 		"title": "Stock Auction Server",
 		"url": "github.com/imadx/stock_auction",
@@ -154,7 +181,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_18",
+		"id": "project_21",
 		"date": "SEP 2015",
 		"title": "Fractals GUI",
 		"url": "github.com/imadx/fractals",
@@ -163,7 +190,7 @@
 		"hidden": true
 	},
 	{
-		"id": "project_19",
+		"id": "project_22",
 		"date": "AUG 2015",
 		"title": "IoT Hub ",
 		"url": "github.com/imadx/IoT_hub",
@@ -171,7 +198,7 @@
 		"skills": ["Express", "MQTT", "Socket.io", "MongoDB"]
 	},
 	{
-		"id": "project_20",
+		"id": "project_23",
 		"date": "APR 2015",
 		"title": "Slider Puzzle",
 		"url": "apps.facebook.com/sliderpuzzletimechal",

@@ -1,6 +1,15 @@
 [
     "Vue.js",
     "HTML5 + Javascript",
+    "Flutter",
+    "React Native",
+    "NodeJS",
+    "Svelte",
+    "Marko",
+    "FeatherJS",
+    "Fastify",
+    "Angular9",
+    "FeatherJS",
     "Express.js",
     "Socket.io",
     "Vue.js",
@@ -15,6 +24,7 @@
     "MongoDB",
     "Mysql",
     "NodeJS",
+    "AWS",
     "Heroku",
     "Docker",
     "git",
@@ -28,5 +38,5 @@
     "Premiere",
 	"Operating Systems",
 	"Software Architecture",
-	"Data Structures & Algorithms",
+	"Data Structures & Algorithms"
 ]

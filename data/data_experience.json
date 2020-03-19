@@ -1,11 +1,78 @@
 [
     {
+        "title": "Senior Software Engineer, SyscoLABS",
+        "url": [{
+            "caption": "syscolabs.lk",
+            "link": "https://youtu.be/MAIuin-MqfA?t=303"
+        }],
+        "time": "2019-2020",
+        "description": "SyscoLABS is the technology arm of the 2nd largest food service provider, Sysco. I mainly worked on Front-end projects as a Senior Software Engineer. Lead a small pod of 3 engineer and worked along with 3 other pods lead by Tech Leads",
+        "skills": [
+            "ReactJS",
+            "HTML5",
+            "Parcel",
+            "SCSS",
+            "Bash",
+            "NodeJS",
+            "Mocha",
+            "Jenkins",
+            "AWS S3",
+            "AWS CloudFront",
+            "AWS Route53"
+        ]
+    },
+    {
+        "title": "Software Engineer, SyscoLABS",
+        "url": [{
+            "caption": "syscolabs.lk",
+            "link": "https://syscolabs.lk/blog/sysco-labs-tutorials-creating-a-rest-api-using-aws-lambda/"
+        }],
+        "time": "2017-2019",
+        "description": "SyscoLABS is the technology arm of the 2nd largest food service provider, Sysco. I worked on the Sysco Reports/Sysco Street Reports projects.",
+        "skills": [
+            "Play Framework",
+            "Mockito",
+            "Scala Templates",
+            "HTML5",
+            "NATS.io",
+            "jQuery",
+            "ReactJS",
+            "VueJS",
+            "Webpack",
+            "Parcel",
+            "SCSS",
+            "Python",
+            "Bash",
+            "Redis",
+            "Lua Scripting for Redis",
+            "NodeJS",
+            "Mocha",
+            "Chai",
+            "Go",
+            "Rust",
+            "MySQL",
+            "Teeid",
+            "Rancher",
+            "GoCD",
+            "Jenkins",
+            "AWS S3",
+            "AWS SQS",
+            "AWS SNS",
+            "AWS ElastiCache for Redis",
+            "AWS ECS",
+            "AWS EC2",
+            "AWS ElasticBeanstalk",
+            "AWS EBS",
+            "AWS Redshift"
+        ]
+    },
+    {
         "title": "Senior UI/UX developer, Kloudmart",
         "url": [{
             "caption": "kloudmart.lk",
             "link": "https://kloudmart.lk"
         }],
-        "time": "2015-PRESENT",
+        "time": "2015-2017",
         "description": "KloudMart is a visual platform for non-programmers, to create your own IdeaPRO apps on the Dialog (Sri Lanka) ideaMart platform, without writing a single piece of code, using a visual interface. I worked as the UI/UX developer for kloudmart.lk and also developed the App Simulator to test the apps created using KloudMart.",
         "skills": [
             "NodeJS",
