@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
-    loadContent('/resume.html', 'resume');
+    loadContent('/resume-content.html', 'resume');
     loadContent('/footer.html', 'footer');
     loadContent('/content.html', 'content');
 

@@ -1049,7 +1049,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
       }
     });
 
-    loadContent('/resume.html', 'resume');
+    loadContent('/resume-content.html', 'resume');
     loadContent('/footer.html', 'footer');
     loadContent('/content.html', 'content');
 

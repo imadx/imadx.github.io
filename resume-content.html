@@ -1,0 +1,229 @@
+<h2>
+<span>My Resume <small>Last modified on Mar 19, 2020</small></span>
+<a class="right button relative-pos" title="Download my resume as a PDF" href="/pdf/resume_ishan_madhusanka.pdf" @click.stop="setDownloaded" download target="_blank" style="margin-left: 1em;">
+	<transition-group name="slide-fade" mode="out-in">
+		<i class="material-icons fixed-icon" v-if="!resume_downloaded" key="downloaded">picture_as_pdf</i>
+		<i class="material-icons fixed-icon" v-else key="not_downloaded">check</i>
+	</transition-group>
+	<span class="hidden"><i class="material-icons">picture_as_pdf</i></span>
+	Download Resume
+</a>
+<a class="right button" @click="hideResume"><span><i class="material-icons">arrow_back</i></span> Recent Projects</a>
+<div class="clearfix"></div>
+</h2>
+
+<div id="whoami" class="content-box">
+	<code class="code-heading">~$ whoami</code>
+	<hgroup>
+		<h1>Ishan Madhusanka</h1>
+		<h3 class="uppercase">Tech Lead <br>UI/UX Enthusiast</h3>
+	</hgroup>
+	<p>I’m a passionate, self-motivated, fast-paced Computer Engineering graduate with a creative insight who loves to work with web technologies + UI/UX related projects. Known for developing event-specific (targeted) web applications for <a href="http://www.ce.pdn.ac.lk/" target="_blank">university</a> events.</p>
+</div>
+<div class="content-box" id="skills_list">
+	<code class="code-heading">~$ cat skills</code>
+	<h2>Skills</h2>
+	<hr>
+	<h3>Tested skills</h3>
+	<p>For more results on tests, visit my <a href="https://www.upwork.com/o/profiles/users/_~019fb184fbddd12815/" target="_blank">upwork.com profile</a></p>
+	<div class="skill-list-tested">
+		<skill-component 
+			v-for="skill in skills_tested_list"
+			:key="skill.name"
+			:skill="skill.name"
+			:image="skill.image"
+			:imagewidth="skill.imagewidth"
+			:imageheight="skill.imageheight"
+			:score="skill.score"
+			:ranking="skill.ranking"
+			:date="skill.date">	
+		</skill-component>
+		
+	</div>
+	<h3>Preferred skills</h3>
+	<p>From the listing below, the ones in <b class="bold accent">green</b> are the most preferred.</p>
+	<br>
+	<table>
+		<tr v-for="(skills, category) in skills_list">
+			<td class="skill_title">{{category}}</td>
+			<td class="skill_list">
+				<span class="skill" v-for="(skill, skill_idx) in skills" :class="{'bold':skills_preferred.indexOf(skill)>=0, 'grayscale faded':skills_preferred.indexOf(skill)<0}" :style="'opacity: ' + (1.0 * 1.4-(skill_idx/(1.0*skills.length)))">{{skill}}</span>
+			</td>
+		</tr>
+	</table>
+</div>
+<div class="content-box" id="experience">
+	<code class="code-heading">~$ history</code>
+	<h2>Experience</h2>
+	<hr>
+	<div class="experience_item" v-for="item in experience">
+		<h3 class="bold">{{item.title}} | <a :href="url_item.link" v-for="url_item in item.url" target="_blank">{{url_item.caption}}</a> <span class="no-wrap">( {{item.time}} )</span></h3>
+		<div class="skills padded-y">
+			<span class="skill" v-for="skill in item.skills">{{skill}}</span>
+		</div>
+		<p>{{item.description}}</p>
+	</div>
+
+</div>
+
+<div class="content-box">
+	<h2>Hackathons &amp; Competitive Coding Competitions</h2>
+	<hr>
+	<table class="timeline">
+		<tr>
+			<th colspan="2"></th>
+			<th class="text-left">Competition</th>
+			<th v-show="!isTooCompactTimeline()" class="text-left left-padded">Placement/Award</th>
+			<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
+		</tr>
+		<template v-for="(item, index) in competitions">
+			<tr class="line-horizontal">
+				<td class="date"><span>{{item.date}}</span></td>
+				<td rowspan="2" class="dot-td" :class="{'end-dot': (index==(competitions.length-1))}"><span class="dot"> </span></td>
+				<td class="title"><span>{{item.title}}</span></td>
+				<td colspan="2" class="award-skills">
+					<span class="desc-secondary" v-show="!isTooCompactTimeline()">
+						<img class="award-skills" src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
+						{{item.placement}}
+					</span>
+					
+					<div class="right" v-show="!isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="3" class="description">
+					<span class="padded-y">{{item.description}}</span>
+					<div class="small padded-y" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+					<span class="desc-secondary" v-show="isTooCompactTimeline()">
+						<img class="award-skills" src="/img/icons/award.svg" :class="{'grayscale': (item.placement == 'Participation')}" alt="">
+						{{item.placement}}
+					</span>
+				</td>
+			</tr>
+		</template>
+	</table>
+</div>
+
+<div class="content-box">
+	<h2>Projects</h2>
+	<hr>
+		<table class="timeline">
+			<thead>
+				<tr key="project_headers">
+					<th colspan="2"></th>
+					<th class="text-left">Project</th>
+					<th v-show="!isTooCompactTimeline()" class="text-left left-padded">URL</th>
+					<th v-show="!isCompactTimeline()" class="text-right">Summary of Technical Stack</th>
+				</tr>
+			</thead>
+			<tbody is="transition-group" name="slide-fade-scale">
+				<template v-for="(item, index) in filtered_projects" >
+					<tr class="line-horizontal" :key="'row_1_' + item.id">
+						<td class="date"><span>{{item.date}}</span></td>
+						<td rowspan="2" class="dot-td" :class="{'dot-td-outline': (index==(filtered_projects.length-2) && projects_hidden),'end-dot': (index==(filtered_projects.length-1))}"><span class="dot" :class="{'dot-hidden': item.hidden}" @click="hideHiddenProjects(item.hidden)">{{item.hidden?'-':''}}</span></td>
+						<td class="title"><span>{{item.title}}</span></td>
+						<td colspan="2" class="url-skills">
+							<a :href="'//' + item.url" class="desc-secondary" v-show="!isTooCompactTimeline()" target="_blank">
+								<img class="url-skills" src="/img/icons/url.svg" alt="">
+								{{item.url}}
+							</a>
+							<div class="right" v-show="!isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+						</td>
+					</tr>
+					<tr :key="'row_2_' + item.id">
+						<td></td>
+						<td colspan="3" class="description">
+							<span class="padded-y">{{item.description}}</span>
+							<div class="small padded-y" v-show="isCompactTimeline()"><span class="skill" v-for="skill in item.skills">{{skill}}</span></div>
+							<a :href="'//' + item.url" class="desc-secondary" v-show="isTooCompactTimeline()" target="_blank">
+								<img class="url-skills" src="/img/icons/url.svg" alt="">
+								{{item.url}}
+							</a>
+						</td>
+					</tr>
+					<tr :key="'row_3_' + item.id" class="expanding-button" v-if="projects_hidden && index==(filtered_projects.length-2)" @click="showHiddenProjects">
+						<td class="date"></td>
+						<td class="dot-td dot-td-outline"><span class="dot dot-outline">+{{projects.length - filtered_projects.length}}</span></td>
+						<td colspan="3" class="hint"><span class="hint-tip">Tap to show all projects</span></td>
+					</tr>
+				</template>
+			</tbody>
+		</table>
+</div>
+
+<div class="terminal box">
+	<div class="content-box small-talk" id="whois">
+		<code class="code-heading">~$ whois imadhusanka.me</code>
+		<ul>
+			<li><a target="_blank" href="mailto:ahtimadhusanka@gmail.com"><span><img src="/img/icons/mail.png"></span>ahtimadhusanka@gmail.com</a></li>
+			<li><a target="_blank" href="tel:+94716451456"><span><img src="/img/icons/phone.png"></span>(+94)71 645 1456</a></li>
+			<li><span><img src="/img/icons/location.png"></span>Nuwara Eliya, Sri Lanka</li>
+			<li><a target="_blank" href="https://github.com/imadx"><span><img src="/img/icons/github.png"></span>github.com/imadx</a></li>
+			<li><a target="_blank" href="https://fb.me/ishan.madhusanka"><span><img src="/img/icons/fb.png"></span>fb.me/ishan.madhusanka</a></li>
+		</ul>
+	</div>
+
+	<div class="content-box small-talk" id="education">
+		<code class="code-heading">~$ tail education -n 12</code>
+		<ul>
+			<li>
+				<b>Ordinary Level</b><br>
+				<span class="faded">Dharmaraja College, Kandy</span><br>
+				<span class="faded">[ 2008 ]</span>
+			</li>
+			<li>
+				<b>Advanced Level</b><br>
+				<span class="faded">Dharmaraja College, Kandy</span><br>
+				<span class="faded">[ 2011 ]</span>
+			</li>
+			<li>
+				<b>B.Sc. Engineering <br>
+				(Specializing in Computer Engineering)</b><br>
+				<span class="faded">University of Peradeniya</span><br>
+				<span class="faded">[ 2014 – Present ]</span>
+			</li>
+		</ul>
+	</div>
+
+	<div class="content-box small-talk" id="sports">
+		<code class="code-heading">~$ tail sports -n 6</code>
+		<ul>
+
+			<li>
+				<b>Half Colors</b><br>
+				<span class="faded">University Hockey Team - 2014</span><br>
+			</li>
+			<li>
+				<b>Full Colors</b><br>
+				<span class="faded">University Hockey Team - 2015</span><br>
+				<span class="faded">University Hockey Team - 2016</span><br>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="terminal box">
+	<div class="content-box" id="clubs">
+		<code class="code-heading">~$ tail clubs_and_societies -n 12</code>
+		<ul>
+
+			<li>
+				<b>President</b><br>
+				<span class="faded">Society of ICT Dharmaraja College, Kandy - 2010,2011</span><br>
+			</li>
+			<li>
+				<b>Editor</b><br>
+				<span class="faded">Science Society, Dharmaraja College, Kandy - 2011</span><br>
+				<span class="faded">Astronomical Society, Dharmaraja College, Kandy - 2011</span><br>
+				<span class="faded">English Literary &amp; Drama Society, Dharmaraja College, Kandy - 2011</span><br>
+				<span class="faded">Pera Hockey Association, University of Peradeniya - 2017</span><br>
+			</li>
+			<li>
+				<b>Executive Committee</b><br>
+				<span class="faded">Hackers’ Club, University of Peradeniya - 2016</span><br>
+				<span class="faded">Association of Computer Engineering Students, University of Peradeniya - 2017</span><br>
+			</li>
+		</ul>
+	</div>
+	
+</div>
