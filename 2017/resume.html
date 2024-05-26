@@ -1,0 +1,95 @@
+<!-- Copyright 2017 Ishan Madhusanka
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+http://www.apache.org/licenses/LICENSE-2.0
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ishan Madhusanka</title>
+  <meta name="description" content="I'm a Tech Lead + a UI/UX enthusiast.">
+  <meta name="keywords" content="ishan, madhusanka, tech lead, ui, ux, computer engineer">
+  <meta name="author" content="Ishan Madhusanka">
+  <link rel="apple-touch-icon" sizes="57x57" href="/img/assets/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/img/assets/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/img/assets/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/assets/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/img/assets/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/assets/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/img/assets/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/assets/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/assets/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/img/assets/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/img/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/assets/favicon-16x16.png">
+  <link rel="manifest" href="/img/assets/manifest.json">
+  <meta property="og:url" content="http://imadx.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ishan Madhusanka" />
+  <meta property="og:description" content="I'm a Tech Lead + a UI/UX enthusiast." />
+  <meta property="og:image" content="http://imadx.github.io/img/assets/promo.png" />
+  <meta property="og:image" content="http://imadx.github.io/img/assets/logo.png" />
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/img/assets/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Mobile Specific Metas
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FONT
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Roboto:100,200,400,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- CSS
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- Favicon
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/img/assets/favicon.png">
+</head>
+
+<body>
+  <div class="wrapper" id="app">
+    <div id="loader">
+      <svg class="loader" viewbox="0 0 100 100">
+        <circle cx="50" cy="50" r="40" stroke-width="10" stroke="#00a859" fill="none"> 
+        <span class="uppercase faded">waiting for content... (<span id="loaded_content_idx">0/5</span>)</span>
+      </svg>
+    </div>
+    <header id="header"></header>
+    <div id="notification_area" class="not-visible">
+      <div id="profile">
+        <img src="./img/profile.png" alt="" class="profile-pic">
+        <hgroup>
+          <h1>Ishan Madhusanka</h1>
+          <h2>Tech Lead + UI/UX Enthusiast</h2>
+        </hgroup>
+      </div>
+      <div class="contacts">
+        <a href="mailto:ahtimadhusanka@gmail.com"><i class="material-icons">message</i> <span>ahtimadhusanka@gmail.com</span></a>
+        <a href="tel:94716451456"><i class="material-icons">phone</i> <span>(+94)71 645 1456</span></a>
+      </div>
+    </div>
+    <div id="content-wrapper">
+      <transition-group name="slide-fade" mode="out-in">
+        <section v-if="visible_resume" id="resume" key="resume"></section>
+        <section v-else id="content" key="summary"></section>
+      </transition>
+    </div>
+    <footer id="footer"></footer>
+  </div>
+  <script src="./dist/bundle.js"></script>
+</body>
+
+</html>
